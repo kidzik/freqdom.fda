@@ -1,5 +1,5 @@
 #' @export
 fts.plot = function(...){
-  dpca.var(...)
+  stop("Not implemented yet.")
 }
 
