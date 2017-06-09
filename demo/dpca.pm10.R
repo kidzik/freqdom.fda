@@ -27,7 +27,7 @@ Y1[,-1] = 0
 Xpca = Y1 %*% t(PR$rotation)
 
 ## Dynamic PCA ##
-XI.est = dpca.filters(spectral.density(t(X$coef),q=20),lags=-10:10)  # finds the optimal filter
+XI.est = dpca.filters(spectral.density(t(X$coef),q=20))  # finds the optimal filter
 Y.est = t(X$coef) %c% freqdom.transpose(XI.est)  # applies the filter
 Y.est[,-1] = 0 # forces the use of only one component
 Xdpca.est = Y.est %c% rev(XI.est)    # deconvolution
@@ -67,6 +67,7 @@ for (i in (11 - d):(11 + d)){
   F$basis$rangeval = i - 11 + c(0,1)
   if (i == 11 - d){
     xlim = c(-d,d+1)
+#    plot(F)
     plot(F,xlim=xlim,ylim=c(-0.3,1.2),xlab="", ylab="",xaxt='n',lwd=4,col=1,bty="n")
   }
   else {

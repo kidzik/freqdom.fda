@@ -7,7 +7,7 @@ Author: Hormann S., Kidzinski L.
 Maintainer: Kidzinski L. <lukasz.kidzinski@stanford.edu>
 Description: Methods for the analysis of funnctional time series using frequency domain techniques. Implementations of functional dynamic principle components analysis (DPCA) and estimators of operators in lagged regression. Examples of usage in functional data analysis setup. 
 License: GPL-3
-Depends: R (>= 2.15.0), mvtnorm, stats, graphics, base, matrixcalc, fda, freqdom
+Depends: R (>= 2.15.0), mvtnorm, stats, graphics, base, matrixcalc, fda, freqdom, lattice
 Suggests: MASS, MARSS
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.0.1
