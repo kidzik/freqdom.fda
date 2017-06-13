@@ -50,7 +50,7 @@ fts.plot.operators = function(X, cor = FALSE, grid = FALSE, main="Operators"){
 
 fts.operator = function(X, lag, cor, cv = NULL)
 {
-  dgrid = 20
+  dgrid = 100
   rangeX = seq(X$basisX$rangeval[2], X$basisX$rangeval[1], length.out = dgrid)
   rangeY = seq(X$basisY$rangeval[1], X$basisY$rangeval[2], length.out = dgrid)
   
