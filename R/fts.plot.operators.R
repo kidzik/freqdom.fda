@@ -15,13 +15,14 @@ fts.plot.operators = function(X, cor = FALSE, grid = FALSE, main="Operators"){
   
   for (i in 1:dim(X$operators)[3]){
     op = fts.operator(X, i, cor, cv = cv)
+    print(cv)
     if (min(op) < cmin) cmin = min(op)
     if (max(op) > cmax) cmax = max(op)
   }
-  # if (cor){
-  #   cmin = -1
-  #   cmax = 1
-  # }
+  if (cor){
+   cmin = -1
+   cmax = 1
+  }
   
   for (i in 1:dim(X$operators)[3]){
     plots[[as.character(i)]] = fts.plot.one.operator(X, i, cor, cmin, cmax, cv = cv)
@@ -51,7 +52,7 @@ fts.plot.operators = function(X, cor = FALSE, grid = FALSE, main="Operators"){
 fts.operator = function(X, lag, cor, cv = NULL)
 {
   dgrid = 100
-  rangeX = seq(X$basisX$rangeval[2], X$basisX$rangeval[1], length.out = dgrid)
+  rangeX = seq(X$basisX$rangeval[1], X$basisX$rangeval[2], length.out = dgrid)
   rangeY = seq(X$basisY$rangeval[1], X$basisY$rangeval[2], length.out = dgrid)
   
   evalX = eval.basis(rangeX, X$basisX)
@@ -77,6 +78,7 @@ fts.plot.one.operator = function(X, lag, cor, cmin, cmax, cv = NULL)
     lagname = paste("frequency",X$freq[lag])
   if (is.timedom(X))
     lagname = paste("lag",X$lags[lag])
-  levelplot(Re(h), xlab="", ylab=NULL, at=seq(cmin,cmax,length.out=50), col.regions=rev(heat.colors(50)),
+  cmax = max(abs(cmin),abs(cmax))
+  levelplot(Re(h)[dim(h)[1]:1,1:dim(h)[2]], xlab="", ylab=NULL, at=seq(-cmax,cmax,length.out=50), col.regions=colorRampPalette(brewer.pal(11, "RdBu")[11:1]),
                   scales=list(draw=FALSE), main=lagname )
 }
