@@ -15,7 +15,6 @@ fts.plot.operators = function(X, cor = FALSE, grid = FALSE, main="Operators"){
   
   for (i in 1:dim(X$operators)[3]){
     op = fts.operator(X, i, cor, cv = cv)
-    print(cv)
     if (min(op) < cmin) cmin = min(op)
     if (max(op) > cmax) cmax = max(op)
   }
