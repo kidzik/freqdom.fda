@@ -15,22 +15,26 @@ fts.plot.filters = function(X, Ndpc = 1, lags = -3:3, one.plot=TRUE,...)
   # defaults
   cols = 1:Ndpc
   lwd = 2
+  lty = 1
 
   arg <- list(...)
   if ("col" %in% names(arg))
     cols = rep(arg[["col"]], Ndpc)
   if ("lwd" %in% names(arg))
     lwd = arg[["lwd"]]
+  if ("lty" %in% names(arg))
+    lty = arg[["lty"]]
   arg$lwd=NULL
+  arg$lty=NULL
   arg$col=NULL
 
   lo=X$basisX$rangeval[1]
   up=X$basisX$rangeval[2]
+  grid = lo+(up-lo)*0:100/100
 
   for (dpc in 1:Ndpc){
     for (i in 1:d){
       F = fd(as.matrix(X$operators[dpc,,i]),X$basisX)
-      grid = lo+(up-lo)*0:100/100
       evals = eval.fd(grid,F)
       if (cmin > min(evals)) cmin = min(evals)
       if (cmax < max(evals)) cmax = max(evals)
@@ -40,13 +44,13 @@ fts.plot.filters = function(X, Ndpc = 1, lags = -3:3, one.plot=TRUE,...)
   for (dpc in 1:Ndpc){
     for (i in 1:d){
       F = fd(as.matrix(X$operators[dpc,,i]),X$basisX)
-      F$basis$rangeval = -mid + i + c(0,1)
+      evals = eval.fd(grid,F)
       if (i == 1 && (dpc == 1 || !one.plot)){
         xlim = c(1-mid,mid)
-        do.call(function(...) { plot(F,xlim=xlim,ylim=c(cmin,cmax),xlab="", ylab="",xaxt='n',col=cols[dpc],lwd = lwd,bty="n",...) }, arg)
+        do.call(function(...) { plot(grid - mid + i,evals,xlim=xlim,ylim=c(cmin,cmax),xlab="", ylab="",xaxt='n',col=cols[dpc],lwd = lwd,lty = lty,type = 'l',bty="n",...) }, arg)
       }
       else {
-        do.call(function(...) { lines(F, col=cols[dpc], lwd = lwd, ...) }, arg)
+        do.call(function(...) { lines(grid - mid + i,evals, col=cols[dpc], lwd = lwd, lty = lty,...) }, arg)
       }
       if (i == mid)
         abline(h=0,lty=1)

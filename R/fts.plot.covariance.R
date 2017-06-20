@@ -1,7 +1,7 @@
 #' Plot covariance and cross covariance kernels of functional time series
 #'
 #' @export
-fts.plot.covariance = function(X, Y = X, cor = FALSE, main="Operators", res=200, lags = -1:1){
+fts.plot.covariance = function(X, Y = X, cor = FALSE, main="Operators", res=200, lags = 0:3){
   A=fts.cov.structure(X,Y,lags=lags)
   if(cor==TRUE){
     A=fts.cor.structure(X,Y,lags=0:lags)
