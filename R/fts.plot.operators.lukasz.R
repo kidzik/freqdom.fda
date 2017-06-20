@@ -1,7 +1,7 @@
 #' Plot kernels
 #'
 #' @export
-fts.plot.operators = function(X, cor = FALSE, grid = FALSE, main="Operators"){
+fts.plot.operators.lukasz = function(X, cor = FALSE, grid = FALSE, main="Operators"){
   plots = list()
   cmin = 0 #1e10
   cmax = -1e10

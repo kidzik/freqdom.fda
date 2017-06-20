@@ -1,5 +1,3 @@
-#library("devtools")
-install(".")
 library(fda.ts)
 data(pm10)
 
@@ -12,6 +10,7 @@ Xdpca.est = fts.dpca.KLexpansion(Y.est, XI.est)
 
 #X = fts.rar(100,d=11)
 #fts.plot.operators(fts.cov.structure(X,lags=-2:2), cor = FALSE, grid = TRUE)
-fts.plot.covariance(X,cor = TRUE)
+fts.plot.covariance(X)
+fts.plot.operators(SD, freq=c(-0.2,0,0.45))
 
-fts.plot.filters(XI.est, Ndpc = 3, lags = -2:2, lty = 2, lwd = 2, col= c(2,6,3), one.plot = FALSE)
+fts.plot.filters(XI.est, Ndpc = 3, lags = -2:2, lty = 1, lwd = 2, col= c(2,6,3), one.plot = TRUE)

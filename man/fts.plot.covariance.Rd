@@ -5,7 +5,7 @@
 \title{Plot covariance and cross covariance kernels of functional time series}
 \usage{
 fts.plot.covariance(X, Y = X, cor = FALSE, main = "Operators",
-  res = 200, nlags = 5)
+  res = 200, lags = -1:1)
 }
 \description{
 Plot covariance and cross covariance kernels of functional time series
