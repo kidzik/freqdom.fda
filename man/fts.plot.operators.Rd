@@ -4,7 +4,7 @@
 \alias{fts.plot.operators}
 \title{Plot kernels}
 \usage{
-fts.plot.operators(X)
+fts.plot.operators(X, cor = FALSE, grid = FALSE, main = "Operators")
 }
 \description{
 Plot kernels

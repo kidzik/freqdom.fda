@@ -4,7 +4,7 @@
 \alias{fts.plot.filters}
 \title{Plot kernels}
 \usage{
-fts.plot.filters(X, Ndpc = 1, lags = -3:3)
+fts.plot.filters(X, Ndpc = 1, lags = -3:3, one.plot = TRUE, ...)
 }
 \description{
 Plot kernels

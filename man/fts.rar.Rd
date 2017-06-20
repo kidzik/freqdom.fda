@@ -4,7 +4,7 @@
 \alias{fts.rar}
 \title{Test}
 \usage{
-fts.rar(n, basis = create.fourier.basis(nbasis = 11), ...)
+fts.rar(n, d = 11, basis = create.fourier.basis(nbasis = d), ...)
 }
 \description{
 Test

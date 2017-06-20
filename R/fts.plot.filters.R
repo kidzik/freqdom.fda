@@ -4,12 +4,13 @@
 fts.plot.filters = function(X, Ndpc = 1, lags = -3:3, one.plot=TRUE,...)
 {
   X = fts.timedom.trunc(X, lags)
-  # TODO: for now assumes symmetric lags
+
+    # TODO: for now assumes symmetric lags
   d = dim(X$operators)[3]
   mid = (d+1)/2
 
-  cmin = 1e10
-  cmax = -1e10
+  cmin = 1e2
+  cmax = -1e2
   
   # defaults
   cols = 1:Ndpc
@@ -23,13 +24,14 @@ fts.plot.filters = function(X, Ndpc = 1, lags = -3:3, one.plot=TRUE,...)
   arg$lwd=NULL
   arg$col=NULL
 
-lo=X$basis$rangeval[1]
-up=X$basis$rangeval[2]
+  lo=X$basisX$rangeval[1]
+  up=X$basisX$rangeval[2]
 
   for (dpc in 1:Ndpc){
     for (i in 1:d){
       F = fd(as.matrix(X$operators[dpc,,i]),X$basisX)
-      evals = eval.fd(lo+(up-lo)*0:100/100,F)
+      grid = lo+(up-lo)*0:100/100
+      evals = eval.fd(grid,F)
       if (cmin > min(evals)) cmin = min(evals)
       if (cmax < max(evals)) cmax = max(evals)
     }
