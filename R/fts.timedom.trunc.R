@@ -1,7 +1,8 @@
 #' @export
 fts.timedom.trunc = function(X, lags){
-  newX = timedom.trunc(X, lags)
-  newX$basisX = X$basisX
-  newX$basisY = X$basisY
-  newX
+  if(!is.fts.timedom(X))
+	stop("X must be an object of class fts.timedom")
+	multX=timedom(X$operators,X$lags)
+  newX = timedom.trunc(multX, lags)
+  fts.timedom(newX,X$basisX,X$basisY)
 }

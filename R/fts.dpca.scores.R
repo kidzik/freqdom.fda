@@ -1,9 +1,10 @@
 #' @export
-fts.dpca.scores = function(X,...){
-  arg <- list(...)
-  arg[["X"]] = t(X$coefs)
-  if (!("dpcs" %in% names(arg)))
-    arg[['dpcs']] = ceiling((dim(X$coefs)[1])^(1/3)) # X$coef is transposed, so we take [1]!
-  
-  do.call(dpca.scores, arg)
+fts.dpca.scores = function(X,dpcs = fts.dpca.filters(spectral.density(X))){
+
+  basisX=dpcs$basisX
+  B=inprod(F$basisX,F$basisX)
+  multX = t(B%*%X$coefs)
+  A=timedom(dpcs$operators,dpcs$lags)
+  dpca.scores(multX,A)
 } 
+

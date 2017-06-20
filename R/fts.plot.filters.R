@@ -22,11 +22,14 @@ fts.plot.filters = function(X, Ndpc = 1, lags = -3:3, one.plot=TRUE,...)
     lwd = arg[["lwd"]]
   arg$lwd=NULL
   arg$col=NULL
-  
+
+lo=X$basis$rangeval[1]
+up=X$basis$rangeval[2]
+
   for (dpc in 1:Ndpc){
     for (i in 1:d){
       F = fd(as.matrix(X$operators[dpc,,i]),X$basisX)
-      evals = eval.fd(0:100/100,F)
+      evals = eval.fd(lo+(up-lo)*0:100/100,F)
       if (cmin > min(evals)) cmin = min(evals)
       if (cmax < max(evals)) cmax = max(evals)
     }

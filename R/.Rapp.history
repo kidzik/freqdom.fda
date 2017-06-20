@@ -1,0 +1,958 @@
+fts.one.plot = function(A, basis1, basis2,res=200){#
+	Afun=bifd (coef=A, sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+        int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+        z=eval.bifd(int1,int2, Afun)#
+        filled.contour(int1,int2,z)#
+        breaks <- seq(min(z), max(z),length.out=100)#
+image.scale(z, col=pal.1(length(breaks)-1), breaks=breaks, horiz=TRUE)#
+box()#
+ }
+fts.one.plot(A,basis1,basis2)
+fts.one.plot = function(A, basis1, basis2,res=200){#
+	Afun=bifd (coef=A, sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+        int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+        z=eval.bifd(int1,int2, Afun)#
+        filled.contour(int1,int2,z)#
+        breaks <- seq(min(z), max(z),length.out=100)#
+image.scale(z,breaks=breaks, horiz=TRUE)#
+box()#
+ }
+fts.one.plot(A,basis1,basis2)
+fts.one.plot = function(A, basis1, basis2,res=200){#
+	Afun=bifd (coef=A, sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+        int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+        z=eval.bifd(int1,int2, Afun)#
+        filled.contour(int1,int2,z)#
+        breaks <- -3:3/20#
+image.scale(z,breaks=breaks, horiz=TRUE)#
+box()#
+ }
+fts.one.plot(A,basis1,basis2)
+fts.one.plot = function(A, basis1, basis2,res=200){#
+	Afun=bifd (coef=A, sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+        int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+        z=eval.bifd(int1,int2, Afun)#
+        filled.contour(int1,int2,z)#
+        breaks <- -3:3/20#
+image.scale(z,breaks=breaks, horiz=FALSE)#
+box()#
+ }
+fts.one.plot(A,basis1,basis2)
+fts.one.plot = function(A, basis1, basis2,res=200){#
+	Afun=bifd (coef=A, sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+        int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+        z=eval.bifd(int1,int2, Afun)#
+        filled.contour(int1,int2,z)#
+       # color.palette = cm.colors,#
+      # col = color.palette(length(levels) - 1),#
+       # breaks <- -3:3/20#
+#image.scale(z,breaks=breaks, horiz=FALSE)#
+#box()#
+ }
+fts.one.plot(A,basis1,basis2)
+fts.one.plot = function(A, basis1, basis2,res=200){#
+	Afun=bifd (coef=A, sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+        int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+        z=eval.bifd(int1,int2, Afun)#
+        filled.contour(int1,int2,z)#
+       breaks <- -3:3/20#
+image.scale(z,breaks=breaks, color.palette = cm.colors,#
+      col = color.palette(length(levels) - 1), horiz=FALSE)#
+box()#
+ }
+fts.one.plot(A,basis1,basis2)
+fts.one.plot = function(A, basis1, basis2,res=200){#
+	Afun=bifd (coef=A, sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+        int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+        z=eval.bifd(int1,int2, Afun)#
+        filled.contour(int1,int2,z)#
+image.scale(z,breaks=1:length(levels)/length(levels), color.palette = cm.colors,#
+      col = color.palette(length(levels) - 1), horiz=FALSE)#
+box()#
+ }
+fts.one.plot(A,basis1,basis2)
+fts.one.plot = function(A, basis1, basis2,res=200){#
+	Afun=bifd (coef=A, sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+        int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+        z=eval.bifd(int1,int2, Afun)#
+        filled.contour(int1,int2,z)#
+        color.palette = cm.colors#
+image.scale(z,breaks=1:length(levels)/length(levels), #
+      col = color.palette(length(levels) - 1), horiz=FALSE)#
+box()#
+ }
+fts.one.plot(A,basis1,basis2)
+fts.one.plot(A,basis1,basis2)
+fts.one.plot(A,basis1,basis2)
+fts.one.plot = function(A, basis1, basis2,res=200){#
+	Afun=bifd (coef=A, sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+        int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+        z=eval.bifd(int1,int2, Afun)#
+        filled.contour(int1,int2,z)#
+        color.palette = cm.colors#
+        par(mar=c(3,1,1,1))#
+image.scale(z,breaks=1:length(levels)/length(levels), #
+      col = color.palette(length(levels) - 1), horiz=FALSE)#
+box()#
+ }
+fts.one.plot(A,basis1,basis2)
+fts.one.plot(A,basis1,basis2)
+fts.one.plot = function(A, basis1, basis2,res=200){#
+	Afun=bifd (coef=A, sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+        int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+        z=eval.bifd(int1,int2, Afun)#
+        filled.contour(int1,int2,z)#
+        breaks <- seq(min(z), max(z),length.out=100)#
+        pal.1=colorRampPalette(c("black", "red", "yellow"), space="rgb")#
+        par(mar=c(3,1,1,1))#
+image.scale(z, col=pal.1(length(breaks)-1), breaks=breaks, horiz=TRUE)#
+box()#
+ }
+fts.one.plot(A,basis1,basis2)
+fts.one.plot(A,basis1,basis2)
+fts.one.plot = function(A, basis1, basis2,res=200){#
+	Afun=bifd (coef=A, sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+        int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+        z=eval.bifd(int1,int2, Afun)#
+        par(mar=c(1,1,1,1))#
+image( int1, int2, z,#
+col=pal.1(length(breaks)-1), breaks=breaks, xaxt="n", yaxt="n", ylab="", xlab="")#
+        filled.contour(int1,int2,z)#
+        breaks <- seq(min(z), max(z),length.out=100)#
+        pal.1=colorRampPalette(c("black", "red", "yellow"), space="rgb")#
+        par(mar=c(3,1,1,1))#
+image.scale(z, col=pal.1(length(breaks)-1), breaks=breaks, horiz=TRUE)#
+box()#
+ }
+fts.one.plot(A,basis1,basis2)
+fts.one.plot = function(A, basis1, basis2,res=200){#
+	Afun=bifd (coef=A, sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+        int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+        z=eval.bifd(int1,int2, Afun)#
+               breaks <- seq(min(z), max(z),length.out=100)#
+        pal.1=colorRampPalette(c("black", "red", "yellow"), space="rgb")#
+        par(mar=c(1,1,1,1))#
+image( int1, int2, z,#
+col=pal.1(length(breaks)-1), breaks=breaks, xaxt="n", yaxt="n", ylab="", xlab="")#
+        filled.contour(int1,int2,z)#
+        par(mar=c(3,1,1,1))#
+image.scale(z, col=pal.1(length(breaks)-1), breaks=breaks, horiz=TRUE)#
+box()#
+ }
+fts.one.plot(A,basis1,basis2)
+fts.one.plot(A,basis1,basis2)
+fts.one.plot(A,basis1,basis2)
+fts.one.plot = function(A, basis1, basis2,res=200){#
+	Afun=bifd (coef=A, sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+        int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+        z=eval.bifd(int1,int2, Afun)#
+               breaks <- seq(min(z), max(z),length.out=100)#
+        pal.1=colorRampPalette(c("black", "red", "yellow"), space="rgb")#
+        par(mar=c(1,1,1,1))#
+image( int1, int2, z,#
+col=pal.1(length(breaks)-1), breaks=breaks, xaxt="n", yaxt="n", ylab="", xlab="")#
+        filled.contour(int1,int2,z)#
+        par(mar=c(3,1,1,1))#
+image.scale(z, col=pal.1(length(breaks)-1), breaks=breaks, horiz=TRUE)#
+ }
+fts.one.plot = function(A, basis1, basis2,res=200){#
+	Afun=bifd (coef=A, sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+        int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+        z=eval.bifd(int1,int2, Afun)#
+               breaks <- seq(min(z), max(z),length.out=100)#
+        pal.1=colorRampPalette(c("black", "red", "yellow"), space="rgb")#
+        par(mar=c(1,1,1,1))#
+image( int1, int2, z,#
+col=pal.1(length(breaks)-1), breaks=breaks, xaxt="n", yaxt="n", ylab="", xlab="")#
+#        filled.contour(int1,int2,z)#
+        par(mar=c(3,1,1,1))#
+image.scale(z, col=pal.1(length(breaks)-1), breaks=breaks, horiz=TRUE)#
+ }
+fts.one.plot(A,basis1,basis2)
+fts.one.plot = function(A, basis1, basis2,res=200){#
+	Afun=bifd (coef=A, sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+        int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+        z=eval.bifd(int1,int2, Afun)#
+               breaks <- seq(min(z), max(z),length.out=100)#
+        pal.1=colorRampPalette(c("black", "red", "yellow"), space="rgb")#
+        par(mfrow=c(2,1))#
+image( int1, int2, z,#
+col=pal.1(length(breaks)-1), breaks=breaks, xaxt="n", yaxt="n", ylab="", xlab="")#
+#        filled.contour(int1,int2,z)#
+image.scale(z, col=pal.1(length(breaks)-1), breaks=breaks, horiz=TRUE)#
+ }
+fts.one.plot(A,basis1,basis2)
+fts.one.plot = function(A, basis1, basis2,res=200){#
+	Afun=bifd (coef=A, sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+        int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+        z=eval.bifd(int1,int2, Afun)#
+               breaks <- seq(min(z), max(z),length.out=100)#
+        pal.1=colorRampPalette(c("black", "blue", "cyan"), space="rgb")#
+        par(mfrow=c(2,1))#
+image( int1, int2, z,#
+col=pal.1(length(breaks)-1), breaks=breaks, xaxt="n", yaxt="n", ylab="", xlab="")#
+#        filled.contour(int1,int2,z)#
+image.scale(z, col=pal.1(length(breaks)-1), breaks=breaks, horiz=TRUE)#
+ }
+fts.one.plot(A,basis1,basis2)
+fts.one.plot = function(A, basis1, basis2,res=200){#
+	Afun=bifd (coef=A, sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+        int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+        z=eval.bifd(int1,int2, Afun)#
+               breaks <- seq(min(z), max(z),length.out=100)#
+        pal.1=colorRampPalette(c("yellow","red","black"), space="rgb")#
+        par(mfrow=c(2,1))#
+image( int1, int2, z,#
+col=pal.1(length(breaks)-1), breaks=breaks, xaxt="n", yaxt="n", ylab="", xlab="")#
+#        filled.contour(int1,int2,z)#
+image.scale(z, col=pal.1(length(breaks)-1), breaks=breaks, horiz=TRUE)#
+ }
+fts.one.plot(A,basis1,basis2)
+fts.one.plot = function(A, basis1, basis2,res=200){#
+	Afun=bifd (coef=A, sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+        int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+        z=eval.bifd(int1,int2, Afun)#
+               breaks <- seq(min(z), max(z),length.out=100)#
+        pal.1=colorRampPalette(c("yellow","red","black"), space="rgb")#
+        par(mar=c(1,1,1,1))#
+image( int1, int2, z,#
+col=pal.1(length(breaks)-1), breaks=breaks, xaxt="n", yaxt="n", ylab="", xlab="")#
+#        filled.contour(int1,int2,z)#
+highest <- which.max(z)#
+points(highest %% dim(z)[1], highest %/% dim(z))[1], #
+pch=2, lwd=2, cex=2,col="blue")#
+par(mar=c(3,1,1,1))#
+image.scale(z, col=pal.1(length(breaks)-1), breaks=breaks, horiz=TRUE)#
+ }
+fts.one.plot = function(A, basis1, basis2,res=200){#
+	Afun=bifd (coef=A, sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+        int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+        z=eval.bifd(int1,int2, Afun)#
+               breaks <- seq(min(z), max(z),length.out=100)#
+        pal.1=colorRampPalette(c("yellow","red","black"), space="rgb")#
+        par(mar=c(1,1,1,1))#
+image( int1, int2, z,#
+col=pal.1(length(breaks)-1), breaks=breaks, xaxt="n", yaxt="n", ylab="", xlab="")#
+#        filled.contour(int1,int2,z)#
+highest <- which.max(z)#
+points(highest %% dim(z)[1], highest %/% dim(z)[1], #
+pch=2, lwd=2, cex=2,col="blue")#
+par(mar=c(3,1,1,1))#
+image.scale(z, col=pal.1(length(breaks)-1), breaks=breaks, horiz=TRUE)#
+ }
+fts.one.plot(A,basis1,basis2)
+fts.one.plot(A,basis1,basis2)
+fts.one.plot = function(A, basis1, basis2,res=200){#
+	Afun=bifd (coef=A, sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+        int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+        z=eval.bifd(int1,int2, Afun)#
+               breaks <- seq(min(z), max(z),length.out=100)#
+        pal.1=colorRampPalette(c("yellow","red","black"), space="rgb")#
+        par(mar=c(1,1,1,1))#
+filled.contour( int1, int2, z,#
+col=pal.1(length(breaks)-1), breaks=breaks, xaxt="n", yaxt="n", ylab="", xlab="")#
+#        filled.contour(int1,int2,z)#
+#highest <- which.max(z)#
+#points(highest %% dim(z)[1], highest %/% dim(z)[1], #
+#pch=2, lwd=2, cex=2,col="blue")#
+#par(mar=c(3,1,1,1))#
+#image.scale(z, col=pal.1(length(breaks)-1), breaks=breaks, horiz=TRUE)#
+ }
+fts.one.plot(A,basis1,basis2)
+fts.one.plot = function(A, basis1, basis2,res=200){#
+	Afun=bifd (coef=A, sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+        int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+        z=eval.bifd(int1,int2, Afun)#
+		filled.contour( int1, int2, z)#
+ }
+fts.one.plot(A,basis1,basis2)
+fts.one.plot(A,basis1,basis2)
+fts.one.plot = function(A, basis1, basis2,res=200){#
+	Afun=bifd (coef=A, sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+        int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+        z=eval.bifd(int1,int2, Afun)#
+		filled.contour( int1, int2, z,nlevels=50)#
+ }
+fts.one.plot(A,basis1,basis2)
+fts.one.plot = function(A, basis1, basis2,res=200){#
+	Afun=bifd (coef=A, sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+        int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+        z=eval.bifd(int1,int2, Afun)#
+		filled.contour( int1, int2, z, color.palette=colorRampPalette(c("black", "red", "yellow"), space="rgb"))#
+ }
+fts.one.plot(A,basis1,basis2)
+fts.one.plot = function(A, basis1, basis2,res=200){#
+	Afun=bifd (coef=A, sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+        int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+        z=eval.bifd(int1,int2, Afun)#
+		filled.contour( int1, int2, z, color.palette=colorRampPalette(c("black", "red", "yellow"), space="rgb"),nlevels=50)#
+ }
+fts.one.plot(A,basis1,basis2)
+fts.one.plot = function(A, basis1, basis2,res=200){#
+	Afun=bifd (coef=A, sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+        int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+        z=eval.bifd(int1,int2, Afun)#
+		filled.contour( int1, int2, z, color.palette=colorRampPalette(c("blue", "yellow", "red"), space="rgb"))#
+ }
+fts.one.plot(A,basis1,basis2)
+fts.one.plot = function(A, basis1, basis2,res=200){#
+	Afun=bifd (coef=A, sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+        int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+        z=eval.bifd(int1,int2, Afun)#
+		filled.contour( int1, int2, z, color.palette=colorRampPalette(c("blue", "yellow", "red"), space="rgb"),nlevels=40)#
+ }
+fts.one.plot(A,basis1,basis2)
+fts.one.plot = function(A, basis1, basis2,res=200){#
+	Afun=bifd (coef=A, sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+        int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+        z=eval.bifd(int1,int2, Afun)#
+		filled.contour( int1, int2, z, color.palette=colorRampPalette(c("blue", "white", "red"), space="rgb"),nlevels=40)#
+ }
+fts.one.plot(A,basis1,basis2)
+fts.plot.operators = function(X, cor = FALSE, main="Operators"){#
+	# is.fts.timedom#
+	nlags=length(X$lags)#
+	gridvals=array(0,c(res,res,nlags))#
+	for(i in 1:nlags){	#
+		Afun=bifd (coef=A, sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+        int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+        gridvals[,,i]=eval.bifd(int1,int2, Afun)#
+	}	#
+	par(mfrow=c(1,nlags))#
+	for(i in 1:nlags){#
+		filled.contour( int1, int2, gridvals[,,i], color.palette=colorRampPalette(c("blue", "white", "red"), space="rgb"),nlevels=40)#
+	}#
+}
+cov.structure(fts.rar(100,d=5))
+X=list()
+CC=cov.structure(rar(100,d=5))
+CC=cov.structure(rar(100,d=5),lags=-3:3)
+X$operators=CC$operators
+X$lags=CC$lags
+X$basis=create.bspline.basis(nbasis=9)
+fts.plot.operators = function(X, Y = X, cor = FALSE, main="Operators"){#
+	# is.fts.timedom#
+	nlags=length(X$lags)#
+	gridvals=array(0,c(res,res,nlags))#
+	basis1=X$basis#
+	basis2=Y$basis#
+	int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+    int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+	for(i in 1:nlags){	#
+		Afun=bifd (coef=X$operators[,,i], sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        gridvals[,,i]=eval.bifd(int1,int2, Afun)#
+	}	#
+	par(mfrow=c(1,nlags))#
+	for(i in 1:nlags){#
+		filled.contour( int1, int2, gridvals[,,i], color.palette=colorRampPalette(c("blue", "white", "red"), space="rgb"),nlevels=40)#
+	}#
+}
+fts.plot.operators(X)
+fts.plot.operators = function(X, Y = X, cor = FALSE, main="Operators", res=200){#
+	# is.fts.timedom#
+	nlags=length(X$lags)#
+	gridvals=array(0,c(res,res,nlags))#
+	basis1=X$basis#
+	basis2=Y$basis#
+	int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+    int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+	for(i in 1:nlags){	#
+		Afun=bifd (coef=X$operators[,,i], sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        gridvals[,,i]=eval.bifd(int1,int2, Afun)#
+	}	#
+	par(mfrow=c(1,nlags))#
+	for(i in 1:nlags){#
+		filled.contour( int1, int2, gridvals[,,i], color.palette=colorRampPalette(c("blue", "white", "red"), space="rgb"),nlevels=40)#
+	}#
+}
+fts.plot.operators(X)
+X$operators[,,1]
+X$operators[,,2]
+is.matrix(X$operators[,,2])
+X$basis=create.bspline.basis(nbasis=5)
+fts.plot.operators(X)
+CC=cov.structure(rar(100,d=5),lags=-1:1)
+X$lags=CC$lags
+fts.plot.operators(X)
+X$lags
+length(X$lags)
+X$basis
+res=200
+int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res
+int1
+for(i in 1:nlags){	#
+		Afun=bifd (coef=X$operators[,,i], sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        gridvals[,,i]=eval.bifd(int1,int2, Afun)#
+	}
+nlags=3
+for(i in 1:nlags){	#
+		Afun=bifd (coef=X$operators[,,i], sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        gridvals[,,i]=eval.bifd(int1,int2, Afun)#
+	}
+int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+	for(i in 1:nlags){	#
+		Afun=bifd (coef=X$operators[,,i], sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        gridvals[,,i]=eval.bifd(int1,int2, Afun)#
+	}
+gridvals=array(0,c(res,res,nlags))
+int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+	for(i in 1:nlags){	#
+		Afun=bifd (coef=X$operators[,,i], sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        gridvals[,,i]=eval.bifd(int1,int2, Afun)#
+	}
+gridvals[,,1]
+filled.contour( int1, int2, gridvals[,,1], color.palette=colorRampPalette(c("blue", "white", "red"), space="rgb"),nlevels=40)
+z=eval.bifd(int1,int2, Afun)#
+		filled.contour( int1, int2, z, color.palette=colorRampPalette(c("blue", "white", "red"), space="rgb"),nlevels=40)
+z=eval.bifd(int1,int2, Afun)#
+		filled.contour( int1, int2, z, color.palette=colorRampPalette(c("blue", "white", "red"), space="rgb"),nlevels=40)
+z=eval.bifd(int1,int2, Afun)#
+		filled.contour( int1, int2, z, color.palette=colorRampPalette(c("blue", "white", "red"), space="rgb"),nlevels=40)
+par(mfrow=c(1,nlags))
+for(i in 1:nlags){#
+		filled.contour( int1, int2, gridvals[,,i], color.palette=colorRampPalette(c("blue", "white", "red"), space="rgb"),nlevels=40)#
+	}
+par(mfrow=c(1,nlags))#
+	for(i in 1:nlags){#
+		plot(1:10,1:10)#
+#		filled.contour( int1, int2, gridvals[,,i], color.palette=colorRampPalette(c("blue", "white", "red"), #space="rgb"),nlevels=40)#
+	}
+for(i in 1:nlags){#
+		filled.contour( int1, int2, gridvals[,,i], color.palette=colorRampPalette(c("blue", "white", "red"), space="rgb"),nlevels=40)#
+	}
+filled.contour3 <-#
+  function (x = seq(0, 1, length.out = nrow(z)),#
+            y = seq(0, 1, length.out = ncol(z)), z, xlim = range(x, finite = TRUE), #
+            ylim = range(y, finite = TRUE), zlim = range(z, finite = TRUE), #
+            levels = pretty(zlim, nlevels), nlevels = 20, color.palette = cm.colors, #
+            col = color.palette(length(levels) - 1), plot.title, plot.axes, #
+            key.title, key.axes, asp = NA, xaxs = "i", yaxs = "i", las = 1, #
+            axes = TRUE, frame.plot = axes,mar, ...) #
+{#
+  # modification by Ian Taylor of the filled.contour function#
+  # to remove the key and facilitate overplotting with contour()#
+  # further modified by Carey McGilliard and Bridget Ferris#
+  # to allow multiple plots on one page#
+#
+  if (missing(z)) {#
+    if (!missing(x)) {#
+      if (is.list(x)) {#
+        z <- x$z#
+        y <- x$y#
+        x <- x$x#
+      }#
+      else {#
+        z <- x#
+        x <- seq.int(0, 1, length.out = nrow(z))#
+      }#
+    }#
+    else stop("no 'z' matrix specified")#
+  }#
+  else if (is.list(x)) {#
+    y <- x$y#
+    x <- x$x#
+  }#
+  if (any(diff(x) <= 0) || any(diff(y) <= 0)) #
+    stop("increasing 'x' and 'y' values expected")#
+ # mar.orig <- (par.orig <- par(c("mar", "las", "mfrow")))$mar#
+ # on.exit(par(par.orig))#
+ # w <- (3 + mar.orig[2]) * par("csi") * 2.54#
+ # par(las = las)#
+ # mar <- mar.orig#
+ plot.new()#
+ # par(mar=mar)#
+  plot.window(xlim, ylim, "", xaxs = xaxs, yaxs = yaxs, asp = asp)#
+  if (!is.matrix(z) || nrow(z) <= 1 || ncol(z) <= 1) #
+    stop("no proper 'z' matrix specified")#
+  if (!is.double(z)) #
+    storage.mode(z) <- "double"#
+  .Internal(filledcontour(as.double(x), as.double(y), z, as.double(levels), #
+                          col = col))#
+  if (missing(plot.axes)) {#
+    if (axes) {#
+      title(main = "", xlab = "", ylab = "")#
+      Axis(x, side = 1)#
+      Axis(y, side = 2)#
+    }#
+  }#
+  else plot.axes#
+  if (frame.plot) #
+    box()#
+  if (missing(plot.title)) #
+    title(...)#
+  else plot.title#
+  invisible()#
+}
+for(i in 1:nlags){#
+		filled.contour3( int1, int2, gridvals[,,i], color.palette=colorRampPalette(c("blue", "white", "red"), space="rgb"),nlevels=40)#
+	}
+library("filled.contour3")
+source("filled.contour3")
+source("http://wiki.cbr.washington.edu/qerm/images/1/16/Filled.contour3.R")#
+source("http://wiki.cbr.washington.edu/qerm/images/2/25/Filled.legend.R")
+library(lattice)#
+library(gridExtra)
+fts.plot.operators = function(X, Y = X, cor = FALSE, main="Operators", res=200){#
+	# is.fts.timedom#
+	nlags=length(X$lags)#
+	gridvals=array(0,c(res,res,nlags))#
+	basis1=X$basis#
+	basis2=Y$basis#
+	int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+    int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+	for(i in 1:nlags){	#
+		Afun=bifd (coef=X$operators[,,i], sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        gridvals[,,i]=eval.bifd(int1,int2, Afun)#
+	}	#
+	par(mfrow=c(1,nlags))#
+	for(i in 1:nlags){#
+	 levelplot( int1, int2, gridvals[,,i], color.palette=colorRampPalette(c("blue", "white", "red"), space="rgb"),nlevels=40)#
+	}#
+}
+for(i in 1:nlags){#
+	 levelplot( int1, int2, gridvals[,,i], color.palette=colorRampPalette(c("blue", "white", "red"), space="rgb"),nlevels=40)#
+	}
+par(mfrow=c(1,nlags))#
+	for(i in 1:nlags){#
+	 levelplot( int1, int2, gridvals[,,i])#, color.palette=colorRampPalette(c("blue", "white", "red"), #space="rgb"),nlevels=40)#
+	}
+par(mfrow=c(1,nlags))#
+	plo=c()#
+	for(i in 1:nlags){#
+	plo=c(plo, filled.contour( int1, int2, gridvals[,,i])#, color.palette=colorRampPalette(c("blue", "white", "red"), #space="rgb"),nlevels=40))#
+	}#
+	grid.arrange(plo, ncol=3)
+par(mfrow=c(1,nlags))#
+	plo=c()#
+	for(i in 1:nlags){#
+	plo=c(plo, filled.contour( int1, int2, gridvals[,,i]))#, color.palette=colorRampPalette(c("blue", "white", "red"), #space="rgb"),nlevels=40))#
+	}#
+	grid.arrange(plo, ncol=3)
+plo=c(plot(1:10,1:10),plot(1:10,1:10))
+grid.arrange(plo,ncol=2)
+x <- y <- seq(-4*pi, 4*pi, len = 100)#
+r <- sqrt(outer(x^2, y^2, "+"))#
+#
+p1 = levelplot(cos(r^2)*exp(-r/(2*pi)))#
+p2 = levelplot(cos(r)*exp(-r/(2*pi)))#
+#
+# Lay out both plots#
+grid.arrange(p1, p2, ncol=2)
+plo=c()#
+	for(i in 1:nlags){#
+	plo=c(plo, levelplot( row.values=int1, column.values=int2, x=gridvals[,,i]))#, color.palette=colorRampPalette(c("blue", "white", "red"), #space="rgb"),nlevels=40))#
+	}#
+	grid.arrange(plo, ncol=nlags)
+levelplot(row.values=in1,column.values=int2, x=gridvals[,,1])
+levelplot(row.values=int1,column.values=int2, x=gridvals[,,1])
+dim(gridvals[,,1])
+length(in1)
+length(int1)
+length(int2)
+levelplot(row.values=int1,column.values=int2, x=gridvals[,,1],aspect="fill")
+levelplot(row.values=int1,column.values=int2, x=gridvals[,,1],aspect="fill",cuts=50)
+levelplot(row.values=int1,column.values=int2, x=gridvals[,,1],aspect="fill",cuts=50,xlim=c(0,1))
+levelplot(row.values=int1,column.values=int2, x=gridvals[,,1],aspect="fill",cuts=50,xlim=c(0,1),ylim=c(0,1))
+plo=c()#
+	for(i in 1:nlags){#
+	plo=c(plo,	levelplot(row.values=int1,column.values=int2, x=gridvals[,,1],cuts=50,xlim=c(0,1),ylim=c(0,1)))#
+	}#
+	grid.arrange(plo, ncol=nlags)
+plo=c(1,2,3)#
+	for(i in 1:nlags){#
+	plo[i]=levelplot(row.values=int1,column.values=int2, x=gridvals[,,1],cuts=50,xlim=c(0,1),ylim=c(0,1))#
+	}#
+	grid.arrange(plo[1],plo[2],plo[3] ncol=nlags)
+plo=c(1,2,3)#
+	for(i in 1:nlags){#
+	plo[i]=levelplot(row.values=int1,column.values=int2, x=gridvals[,,1],cuts=50,xlim=c(0,1),ylim=c(0,1))#
+	}#
+	grid.arrange(plo[1],plo[2],plo[3], ncol=nlags)
+plo1=levelplot(row.values=int1,column.values=int2, x=gridvals[,,1],cuts=50,xlim=c(0,1),ylim=c(0,1))#
+plo2=levelplot(row.values=int1,column.values=int2, x=gridvals[,,2],cuts=50,xlim=c(0,1),ylim=c(0,1))#
+	plo3=levelplot(row.values=int1,column.values=int2, x=gridvals[,,3],cuts=50,xlim=c(0,1),ylim=c(0,1))
+grid.arrange(plo1,plo2,plo3, ncol=nlags)
+class(plo)
+class(plo1)
+h=c(plo1,plo2,plo3)
+class(h)
+grid.arrange(h, ncol=nlags)
+par(mframe=c(1,3))#
+	for(i in 1:nlags){#
+	levelplot(row.values=int1,column.values=int2, x=gridvals[,,i],cuts=50,xlim=c(0,1),ylim=c(0,1))#
+	}
+par(mfrow=c(1,3))#
+	for(i in 1:nlags){#
+	levelplot(row.values=int1,column.values=int2, x=gridvals[,,i],cuts=50,xlim=c(0,1),ylim=c(0,1))#
+	}
+par(mfrow=c(1,nlags))#
+	for(i in 1:nlags){#
+	levelplot(row.values=int1,column.values=int2, x=gridvals[,,i],cuts=50,xlim=c(0,1),ylim=c(0,1),col.regions=colorRampPalette(c("blue", "white", "red"), space="rgb"))#
+	}
+par(mfrow=c(1,nlags))#
+	for(i in 1:nlags){#
+	levelplot(row.values=int1,column.values=int2, x=gridvals[,,i],cuts=50,xlim=c(0,1),ylim=c(0,1),col.regions=colorRampPalette(c("blue", "white", "red"), space="rgb"))#
+	}
+par(mfrow=c(1,nlags))#
+	for(i in 1:nlags){#
+	levelplot(row.values=int1,column.values=int2, x=gridvals[,,i],cuts=50,xlim=c(0,1),ylim=c(0,1),col.regions=colorRampPalette(c("blue", "white", "red"), space="rgb"))#
+	}
+par(mfrow=c(1,nlags))#
+	for(i in 1:nlags){#
+	levelplot(row.values=int1,column.values=int2, x=gridvals[,,i],cuts=50,xlim=c(0,1),ylim=c(0,1),region=TRUE,col.regions=colorRampPalette(c("blue", "white", "red"), space="rgb"))#
+	}
+colorRampPalette(c("blue", "white", "red"), space="rgb")
+h=cov.structure(rar(n=10))
+h$operstors[,,1]
+h$operators[,,1]
+h$operators
+par(mfrow=c(1,nlags))#
+	for(i in 1:nlags){#
+	levelplot(row.values=int1,column.values=int2, x=gridvals[,,i],cuts=50,xlim=c(0,1),ylim=c(0,1),col.regions = gray(0:100/100))#
+	}
+par(mfrow=c(1,nlags))#
+	for(i in 1:nlags){#
+	levelplot(row.values=int1,column.values=int2, x=gridvals[,,i],cuts=50,xlim=c(0,1),ylim=c(0,1),col.regions = gray(0:50/50))#
+	}
+par(mfrow=c(1,nlags))#
+	for(i in 1:nlags){#
+	levelplot(row.values=int1,column.values=int2, x=gridvals[,,i],cuts=49,xlim=c(0,1),ylim=c(0,1),col.regions = gray(0:50/50))#
+	}
+par(mfrow=c(1,nlags))#
+	for(i in 1:nlags){#
+	levelplot(row.values=int1,column.values=int2, x=gridvals[,,i],cuts=51,xlim=c(0,1),ylim=c(0,1),col.regions = gray(0:50/50))#
+	}
+par(mfrow=c(1,nlags))#
+	for(i in 1:nlags){#
+	levelplot(row.values=int1,column.values=int2, x=gridvals[,,i],cuts=51,xlim=c(0,1),ylim=c(0,1))#
+	}
+for(i in 1:nlags){#
+	levelplot(row.values=int1,column.values=int2, x=gridvals[,,i],cuts=51,xlim=c(0,1),ylim=c(0,1))#
+	}
+plot(1:10)
+for(i in 1:nlags){#
+	levelplot(row.values=int1,column.values=int2, x=gridvals[,,i],cuts=51,xlim=c(0,1),ylim=c(0,1))#
+	}
+for(i in 1:nlags){#
+	levelplot(row.values=int1,column.values=int2, x=gridvals[,,1],cuts=51,xlim=c(0,1),ylim=c(0,1))#
+	}
+levelplot(row.values=int1,column.values=int2, x=gridvals[,,i],cuts=51,xlim=c(0,1),ylim=c(0,1))
+par(mfrow=c(1,nlags))#
+	for(i in 1:nlags){#
+	levelplot(row.values=int1,column.values=int2, x=gridvals[,,i],cuts=51,xlim=c(0,1),ylim=c(0,1))#
+	}
+nlags
+par(mfrow=c(1,nlags))#
+	for(i in 1:nlags){#
+	levelplot(row.values=int1,column.values=int2, x=gridvals[,,i],cuts=51,xlim=c(0,1),ylim=c(0,1))#
+	}
+plot(1:3)
+levelplot(row.values=int1,column.values=int2, x=gridvals[,,1],cuts=51,xlim=c(0,1),ylim=c(0,1))
+par(mfrow=c(1,nlags))#
+	for(i in 1:nlags){#
+	levelplot(row.values=int1,column.values=int2, x=gridvals[,,i],cuts=51,xlim=c(0,1),ylim=c(0,1))#
+	}
+par(mfrow=c(1,nlags))#
+	for(i in 1:nlags){#
+	levelplot(row.values=int1,column.values=int2, x=gridvals[,,i],cuts=51,xlim=c(0,1),ylim=c(0,1))#
+	}
+plo=c()#
+	for(i in 1:nlags){#
+	plo=c(plo,levelplot(row.values=int1,column.values=int2, x=gridvals[,,i],cuts=51,xlim=c(0,1),ylim=c(0,1)))#
+	}
+plo[1]
+h=levelplot(row.values=int1,column.values=int2, x=gridvals[,,i],cuts=51,xlim=c(0,1),ylim=c(0,1))
+h
+grid.arrange(h,h,ncol=2)
+grid.arrange(h,plo[1],ncol=2)
+c(h,h)
+m=c(h,h)
+m
+grid.arrange(m,ncol=2)
+m
+1:3*1:3
+outer(1:3,1:3)
+outer(1:3,2)
+fts.plot.operators = function(X, Y = X, cor = FALSE, main="Operators", res=200){#
+	# is.fts.timedom#
+	nlags=length(X$lags)#
+	gridvals=array(0,c(res,res,nlags))#
+	basis1=X$basis#
+	basis2=Y$basis#
+	int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:(nlags*res)/(nlags*res)#
+    int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+	for(i in 1:nlags){	#
+		Afun=bifd (coef=X$operators[,,i], sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        gridvals[,,i]=eval.bifd(int1,int2, Afun)#
+	}	#
+	z=matrix(0,c(res,res*nlags))#
+	for(i in 1:nlags){#
+		z[,((i-1)*res+1):i*res]=gridvals[,,i]#
+		}#
+filled.contour( int1, int2, z, color.palette=colorRampPalette(c("blue", "white", "red"), space="rgb"),nlevels=40)#
+}
+fts.plot.operators(X)
+dim(X$operators)
+X$nlags
+X$lags
+X$operators=cov.structure(rar(n=10,d=5))
+X$operators=cov.structure(rar(n=10,d=5),lags=-1:1)
+dim(X$operators)
+X$operators
+X$operators=cov.structure(rar(n=10,d=5),lags=-1:1)$operators
+dim(X$operators)
+fts.plot.operators(X)
+nlags=length(X$lags)#
+	gridvals=array(0,c(res,res,nlags))#
+	basis1=X$basis
+int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:(nlags*res)/(nlags*res)#
+    int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res
+int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:(nlags*res)/res#
+    int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+	for(i in 1:nlags){	#
+		Afun=bifd (coef=X$operators[,,i], sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        gridvals[,,i]=eval.bifd(int1,int2, Afun)#
+	}
+int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+    int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+	for(i in 1:nlags){	#
+		Afun=bifd (coef=X$operators[,,i], sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        gridvals[,,i]=eval.bifd(int1,int2, Afun)#
+	}
+for(i in 1:nlags){	#
+		Afun=bifd (coef=X$operators[,,i], sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        gridvals[,,i]=eval.bifd(int1,int2, Afun)#
+	}	#
+	z=matrix(0,c(res,res*nlags))#
+	for(i in 1:nlags){#
+		z[,((i-1)*res+1):i*res]=gridvals[,,i]#
+		}
+z
+dim(z)
+matrix(0,c(3,3))
+matrix(0,10,ncol=2)
+matrix(0,ncol=2,nrow=3)
+z=matrix(0,ncol=res*nlags,nrow=res)#
+	for(i in 1:nlags){#
+		z[,((i-1)*res+1):i*res]=gridvals[,,i]#
+		}
+dim(z)
+dim(gridvals[,,1])
+z[,1:res]=gridvals[,,1]
+z[,(1+res):2*res]=gridvals[,,2]
+for(i in 1:nlags){#
+		z[,((i-1)*res+1):(i*res)]=gridvals[,,i]#
+		}
+filled.contour( 1:(res*nlags)/res, int2, z, color.palette=colorRampPalette(c("blue", "white", "red"), space="rgb"),nlevels=40)
+filled.contour( int1, 1:(res*nlags)/res, z, color.palette=colorRampPalette(c("blue", "white", "red"), space="rgb"),nlevels=40)
+filled.contour( int1, 1:(res*nlags)/res, z)
+dim(1:(res*nlags)/res)
+length(1:(res*nlags)/res)
+length(in1)
+length(int1)
+dim(z)
+filled.contour( int1, 1:(res*nlags)/res, z)
+filled.contour(1:(res*nlags)/res, int1, t(z))
+z=matrix(0,ncol=res*nlags,nrow=res)#
+	for(i in 1:nlags){#
+		z[((i-1)*res+1):(i*res),]=gridvals[,,i]#
+		}#
+filled.contour(1:(res*nlags)/res, int1, t(z))
+z=matrix(0,nrow=res*nlags,ncol=res)#
+	for(i in 1:nlags){#
+		z[((i-1)*res+1):(i*res),]=gridvals[,,i]#
+		}#
+filled.contour(1:(res*nlags)/res, int1, t(z))
+z=matrix(0,nrow=res*nlags,ncol=res)#
+	for(i in 1:nlags){#
+		z[((i-1)*res+1):(i*res),]=gridvals[,,i]#
+		}#
+filled.contour(1:(res*nlags)/res, int1, z)
+X=list()
+X$operators=cov.structure(rar(100,d=5))$operators
+X$lags=cov.structure(rar(100,d=5))$lags
+X$basis=create.bspline.basis(nbasis=5)
+fts.plot.operators = function(X, Y = X, cor = FALSE, main="Operators", res=200){#
+	# is.fts.timedom#
+	nlags=length(X$lags)#
+	gridvals=array(0,c(res,res,nlags))#
+	basis1=X$basis#
+	basis2=Y$basis#
+	int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+    int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+	for(i in 1:nlags){	#
+		Afun=bifd (coef=X$operators[,,i], sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        gridvals[,,i]=eval.bifd(int1,int2, Afun)#
+	}	#
+	z=matrix(0,nrow=res*nlags,ncol=res)#
+	for(i in 1:nlags){#
+		z[((i-1)*res+1):(i*res),]=gridvals[,,i]#
+		}#
+filled.contour(1:(res*nlags)/res, int1, z)#
+}
+fts.plot.operators(X)
+X$operators=cov.structure(rar(100,d=5),lags=-2:2)$operators
+X$lags=-2:2
+fts.plot.operators(X)
+X$operators=cov.structure(rar(100,Psi=matrix(rep(1,25),ncol=5).d=5))$operators
+X$operators=cov.structure(rar(100,Psi=matrix(rep(1,25),ncol=5)/7,d=5))$operators
+fts.plot.operators(X)
+X
+X$operators
+X$operators=cov.structure(rar(100,Psi=matrix(rep(1,25),ncol=5),d=5),lags=-2,2)$operators
+X$operators=cov.structure(rar(100,Psi=matrix(rep(1,25),ncol=5),d=5),lags=-2:2)$operators
+fts.plot.operators(X)
+X$operators
+X$operators=cov.structure(rar(100,Psi=matrix(rep(1,25)/7,ncol=5),d=5),lags=-2:2)$operators
+X$operators
+fts.plot.operators(X)
+fts.plot.operators = function(X, Y = X, cor = FALSE, main="Operators", res=200){#
+	# is.fts.timedom#
+	nlags=length(X$lags)#
+	gridvals=array(0,c(res,res,nlags))#
+	basis1=X$basis#
+	basis2=Y$basis#
+	int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+    int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+	for(i in 1:nlags){	#
+		Afun=bifd (coef=X$operators[,,i], sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        gridvals[,,i]=eval.bifd(int1,int2, Afun)#
+	}	#
+	z=matrix(0,nrow=res*nlags,ncol=res)#
+	for(i in 1:nlags){#
+		z[((i-1)*res+1):(i*res),]=gridvals[,,i]#
+		}#
+filled.contour(1:(res*nlags)/res, int1, z, color.palette=colorRampPalette(c("blue", "white", "red"), space="rgb"),nlevels=40))#
+}
+fts.plot.operators = function(X, Y = X, cor = FALSE, main="Operators", res=200){#
+	# is.fts.timedom#
+	nlags=length(X$lags)#
+	gridvals=array(0,c(res,res,nlags))#
+	basis1=X$basis#
+	basis2=Y$basis#
+	int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+    int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+	for(i in 1:nlags){	#
+		Afun=bifd (coef=X$operators[,,i], sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        gridvals[,,i]=eval.bifd(int1,int2, Afun)#
+	}	#
+	z=matrix(0,nrow=res*nlags,ncol=res)#
+	for(i in 1:nlags){#
+		z[((i-1)*res+1):(i*res),]=gridvals[,,i]#
+		}#
+filled.contour(1:(res*nlags)/res, int1, z, color.palette=colorRampPalette(c("blue", "white", "red"), space="rgb"),nlevels=40)#
+}
+fts.plot.operators(X)
+fts.plot.operators = function(X, Y = X, cor = FALSE, main="Operators", res=200){#
+	# is.fts.timedom#
+	nlags=length(X$lags)#
+	gridvals=array(0,c(res,res,nlags))#
+	basis1=X$basis#
+	basis2=Y$basis#
+	int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+    int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+	for(i in 1:nlags){	#
+		Afun=bifd (coef=X$operators[,,i], sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        gridvals[,,i]=eval.bifd(int1,int2, Afun)#
+	}	#
+	z=matrix(0,nrow=res*nlags,ncol=res)#
+	for(i in 1:nlags){#
+		z[((i-1)*res+1):(i*res),]=gridvals[,,i]#
+		}#
+filled.contour(1:(res*nlags)/res, int1, z, color.palette=colorRampPalette(c("blue", "white", "red"), space="rgb"),nlevels=40,zlim=c(min(-2),max(2))#
+}
+fts.plot.operators = function(X, Y = X, cor = FALSE, main="Operators", res=200){#
+	# is.fts.timedom#
+	nlags=length(X$lags)#
+	gridvals=array(0,c(res,res,nlags))#
+	basis1=X$basis#
+	basis2=Y$basis#
+	int1=basis1$rangeval[1]+(basis1$rangeval[2]-basis1$rangeval[1])*1:res/res#
+    int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res#
+	for(i in 1:nlags){	#
+		Afun=bifd (coef=X$operators[,,i], sbasisobj=basis1,#
+          tbasisobj=basis2, fdnames=c("x","y"))#
+        gridvals[,,i]=eval.bifd(int1,int2, Afun)#
+	}	#
+	z=matrix(0,nrow=res*nlags,ncol=res)#
+	for(i in 1:nlags){#
+		z[((i-1)*res+1):(i*res),]=gridvals[,,i]#
+		}#
+filled.contour(1:(res*nlags)/res, int1, z, color.palette=colorRampPalette(c("blue", "white", "red"), space="rgb"),nlevels=40,zlim=c(-2,2))#
+}
+fts.plot.operators(X)
+abline(v=1)
+abline(v=2)
+abline(v=3)
+abline(v=4)
