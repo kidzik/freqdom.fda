@@ -31,6 +31,7 @@ fts.plot.filters = function(X, Ndpc = 1, lags = -3:3, one.plot=TRUE,...)
   lo=X$basisX$rangeval[1]
   up=X$basisX$rangeval[2]
   grid = lo+(up-lo)*0:100/100
+  grid01 = 0:100/100
 
   for (dpc in 1:Ndpc){
     for (i in 1:d){
@@ -47,10 +48,10 @@ fts.plot.filters = function(X, Ndpc = 1, lags = -3:3, one.plot=TRUE,...)
       evals = eval.fd(grid,F)
       if (i == 1 && (dpc == 1 || !one.plot)){
         xlim = c(1-mid,mid)
-        do.call(function(...) { plot(grid - mid + i,evals,xlim=xlim,ylim=c(cmin,cmax),xlab="", ylab="",xaxt='n',col=cols[dpc],lwd = lwd,lty = lty,type = 'l',bty="n",...) }, arg)
+        do.call(function(...) { plot(grid01 - mid + i,evals,xlim=xlim,ylim=c(cmin,cmax),xlab="", ylab="",xaxt='n',col=cols[dpc],lwd = lwd,lty = lty,type = 'l',bty="n",...) }, arg)
       }
       else {
-        do.call(function(...) { lines(grid - mid + i,evals, col=cols[dpc], lwd = lwd, lty = lty,...) }, arg)
+        do.call(function(...) { lines(grid01 - mid + i,evals, col=cols[dpc], lwd = lwd, lty = lty,...) }, arg)
       }
       if (i == mid)
         abline(h=0,lty=1)

@@ -1,7 +1,7 @@
 library(fda.ts)
 
 ## TEST spline basis
-basis = create.bspline.basis(c(0,1),nbasis=11)
+basis = create.bspline.basis(c(0,48),nbasis=6) 
 X = fts.rar(100,basis = basis)
 
 SD = fts.spectral.density(X,q=20)

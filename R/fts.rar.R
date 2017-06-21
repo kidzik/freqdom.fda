@@ -6,7 +6,8 @@
 #' @export
 #' 
 fts.rar = function(n, d=11, basis = create.fourier.basis(nbasis=d), ...){
-  B=inprod(basis,basis)		
+  d = basis$nbasis
+  B = inprod(basis,basis)		
   arg <- list(...)
   arg[['n']] <- n
   arg[['d']] <- d
