@@ -7,7 +7,7 @@ X = fts.rar(100,basis = basis)
 SD = fts.spectral.density(X,q=20)
 XI.est = fts.dpca.filters(SD)  # finds the optimal filter
 Y.est = fts.dpca.scores(X, dpcs = XI.est)
-Xdpca.est = fts.dpca.KLexpansion(Y.est, XI.est)
+Xdpca.est = fts.dpca.KLexpansion(X, XI.est)
 
 fts.plot.covariance(X)
 fts.plot.operators(SD, freq=c(-0.2,0,0.45))

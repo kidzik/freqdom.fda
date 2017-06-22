@@ -6,7 +6,7 @@ X = center.fd(X)
 SD = fts.spectral.density(X,q=20)
 XI.est = fts.dpca.filters(SD)  # finds the optimal filter
 Y.est = fts.dpca.scores(X, dpcs = XI.est)
-Xdpca.est = fts.dpca.KLexpansion(Y.est, XI.est)
+Xdpca.est = fts.dpca.KLexpansion(X, XI.est)
 
 #X = fts.rar(100,d=11)
 #fts.plot.operators(fts.cov.structure(X,lags=-2:2), cor = FALSE, grid = TRUE)
