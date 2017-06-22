@@ -36,5 +36,5 @@ for(i in 1:nfilters){
 	A$operators[,,i]=t(B.root.minus%*%t(A$operators[,,i]))
 }
 } 
-    fts.timedom(A, F$basisX)
+    fts.timedom(A, F$basisX, F$basisX)
 }
