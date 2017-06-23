@@ -12,8 +12,10 @@ fts.plot.covariance = function(X, Y = X, cor = FALSE, main="Operators", res=200,
 
 #' @export
 fts.plot.operators = function(A, res=200, lags = -1:1, freq = NULL, complex_axis = "Re"){
+  lags.label="lags"
   if (is.fts.timedom(A)){
     A = fts.timedom.trunc(A,lags = lags)
+    lags = A$lags
   }
   if (is.fts.freqdom(A)){
     # select frequencies close to desired ones
@@ -24,6 +26,8 @@ fts.plot.operators = function(A, res=200, lags = -1:1, freq = NULL, complex_axis
     # truncate the operator
     A$operators = A$operators[,,mins,drop=FALSE]
     A$freq = A$freq[mins]
+    lags = A$freq
+    lags.label="frequencies"
   }
   nlags = dim(A$operators)[3]
 
@@ -42,7 +46,16 @@ fts.plot.operators = function(A, res=200, lags = -1:1, freq = NULL, complex_axis
                tbasisobj=basis2)
     z=rbind(z,eval.bifd(int1,int2, Afun))
   }	
-  filled.contour(1:(res*nlags)/res, int2, z, color.palette=colorRampPalette(c("blue", "white", "red"), space="rgb"),nlevels=40,zlim=c(-max(abs(z)),max(abs(z))),
-                 main="contour of kernels",xlab="lags",xaxt = "n")
+  annotations = function(){
+    for(i in 1:(nlags-1)){	
+      abline(v=i,lty=2,col="black")
+    }
+    axis(1, at=1:nlags - 0.5, tick = FALSE, labels = lags) # axis(2)
+  }
+  
+  filled.contour(1:(res*nlags)/res, int2, z, color.palette=colorRampPalette(c("blue", "white", "red"), space="rgb"),
+                 nlevels=40,zlim=c(-max(abs(z)),max(abs(z))),
+                 plot.axes = { annotations() },
+                 main="contour of kernels",xlab=lags.label,xaxt = "n")
 }
 

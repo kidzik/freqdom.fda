@@ -1,13 +1,14 @@
 #' Plot kernels
 #'
 #' @export
-fts.plot.filters = function(X, Ndpc = 1, lags = -3:3, one.plot=TRUE,...)
+fts.plot.filters = function(X, Ndpc = 1, lags = -3:3, one.plot=FALSE,...)
 {
   X = fts.timedom.trunc(X, lags)
-
-    # TODO: for now assumes symmetric lags
   d = dim(X$operators)[3]
-  mid = (d+1)/2
+
+  # check if lags are in consecutive order
+  if (any(X$lags[2:d] - X$lags[1:(d-1)] != 1) && length(lags) > 1)
+    stop("lags must be in consecutive order")
 
   cmin = 1e2
   cmax = -1e2
@@ -47,20 +48,26 @@ fts.plot.filters = function(X, Ndpc = 1, lags = -3:3, one.plot=TRUE,...)
       F = fd(as.matrix(X$operators[dpc,,i]),X$basisX)
       evals = eval.fd(grid,F)
       if (i == 1 && (dpc == 1 || !one.plot)){
-        xlim = c(1-mid,mid)
-        do.call(function(...) { plot(grid01 - mid + i,evals,xlim=xlim,ylim=c(cmin,cmax),xlab="", ylab="",xaxt='n',col=cols[dpc],lwd = lwd,lty = lty,type = 'l',bty="n",...) }, arg)
+        xlim = c(X$lags[1],X$lags[d] + 1)
+        do.call(function(...) { plot(grid01 + X$lags[1],evals,xlim=xlim,ylim=c(cmin,cmax),xlab="lags", ylab="",xaxt='n',col=cols[dpc],lwd = lwd,lty = lty,type = 'l',bty="n",...) }, arg)
       }
       else {
-        do.call(function(...) { lines(grid01 - mid + i,evals, col=cols[dpc], lwd = lwd, lty = lty,...) }, arg)
+        do.call(function(...) { lines(grid01 + X$lags[i],evals, col=cols[dpc], lwd = lwd, lty = lty,...) }, arg)
       }
-      if (i == mid)
+      text(0.5  + X$lags[i], cmin - (cmax - cmin)*0.02,labels= X$lags[i] )
+      if (i == 1)
         abline(h=0,lty=1)
-      abline(v=F$basis$rangeval[1],lty=2,col="darkgrey")
+      if (i < d)
+        abline(v=X$lags[i]+1,lty=2,col="darkgrey")
     }
     if (!one.plot)
-      title(paste("Component",dpc))
+      title(paste("Filters",dpc))
   }
-  if (one.plot)
+  if (one.plot){
+    legend(X$lags[1],cmax,paste("filter",1:Ndpc), # places a legend at the appropriate place c(“Health”,”Defense”), # puts text in the legend
+           lty=c(1,1), # gives the legend appropriate symbols (lines)
+           lwd=c(2.5,2.5), col = cols) # gives the legend lines the correct color and width
     title(paste("Components"))
+  }
 }
 
