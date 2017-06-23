@@ -14,4 +14,4 @@ Xdpca.est = fts.dpca.KLexpansion(X, XI.est)
 fts.plot.covariance(X, lags=-3:0)
 fts.plot.operators(SD, freq=c(-0.2,0,0.45))
 
-#fts.plot.filters(XI.est, Ndpc = 3, lags = -1:1, lty = 1, lwd = 2, col= c(2,6,3))
+fts.plot.filters(XI.est, Ndpc = 3, lags = -1:1, lty = 1, lwd = 2, col= c(2,6,3), one.plot = TRUE)
