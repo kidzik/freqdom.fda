@@ -61,7 +61,7 @@ fts.plot.filters = function(X, Ndpc = 1, lags = -3:3, one.plot=FALSE,...)
         abline(v=X$lags[i]+1,lty=2,col="darkgrey")
     }
     if (!one.plot)
-      title(paste("Filters",dpc))
+      title(paste("Filter",dpc))
   }
   if (one.plot){
     legend(X$lags[1],cmax,paste("filter",1:Ndpc), # places a legend at the appropriate place c(“Health”,”Defense”), # puts text in the legend

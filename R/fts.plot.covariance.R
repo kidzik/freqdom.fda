@@ -1,17 +1,18 @@
 #' Plot covariance and cross covariance kernels of functional time series
 #'
 #' @export
-fts.plot.covariance = function(X, Y = X, cor = FALSE, main="Operators", res=200, lags = 0:3){
-  A=fts.cov.structure(X,Y,lags=lags)
+fts.plot.covariance = function(X, Y = X, cor = FALSE, main="Operators", res=200, lags = 0:3, nlevels=25){
   if(cor==TRUE){
-    A=fts.cor.structure(X,Y,lags=0:lags)
+    X=sd1(X)
+    Y=sd1(Y)	
   }
-  fts.plot.operators(A,lags=lags,res=res)
+  A=fts.cov.structure(X,Y,lags=lags)	
+  fts.plot.operators(A,lags=lags,res=res,nlevels=nlevels)
 }
 
 
 #' @export
-fts.plot.operators = function(A, res=200, lags = -1:1, freq = NULL, complex_axis = "Re"){
+fts.plot.operators = function(A, res=200, lags = 0, freq = 0, axis = "Re", nlevels = 25){
   lags.label="lags"
   if (is.fts.timedom(A)){
     A = fts.timedom.trunc(A,lags = lags)
@@ -39,7 +40,7 @@ fts.plot.operators = function(A, res=200, lags = -1:1, freq = NULL, complex_axis
   int2=basis2$rangeval[1]+(basis2$rangeval[2]-basis2$rangeval[1])*1:res/res
   for(i in 1:nlags){	
     M = Re(A$operators[,,i])
-    if (complex_axis == "Im")
+    if (axis == "Im")
       M = Im(A$operators[,,i])
 
     Afun=bifd (coef=M, sbasisobj=basis1,
@@ -54,8 +55,21 @@ fts.plot.operators = function(A, res=200, lags = -1:1, freq = NULL, complex_axis
   }
   
   filled.contour(1:(res*nlags)/res, int2, z, color.palette=colorRampPalette(c("blue", "white", "red"), space="rgb"),
-                 nlevels=40,zlim=c(-max(abs(z)),max(abs(z))),
+                 nlevels=nlevels,zlim=c(-max(abs(z)),max(abs(z))),
                  plot.axes = { annotations() },
                  main="contour of kernels",xlab=lags.label,xaxt = "n")
+}
+
+
+sd1<-function(X){
+	X0.f=center.fd(X)
+	scale.f=sd.fd(X)
+	int=X$basis$rangeval
+	X0.d=eval.fd(int[1]+(1:100/100)*(int[2]-int[1]),X0.f)
+	scale.d=eval.fd(int[1]+(1:100/100)*(int[2]-	int[1]),scale.f)
+	for(i in 1:dim(X0.d)[2]){
+		X0.d[,i]=X0.d[,i]/scale.d
+		}
+	fd(X0.d,create.bspline.basis(nbasis=100))
 }
 
