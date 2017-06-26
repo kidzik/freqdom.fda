@@ -11,16 +11,16 @@ fts.dpca.var = function(F){
   B.root=eigen(B)$vectors%*%diag(sqrt(eigen(B)$values))%*%  t(eigen(B)$vectors)
   B.root.minus=solve(B.root)	
   
-n=dim(F$operators)[3]
-  
-for(i in 1:n){
-  F$operators[,,i]=B.root%*%F$operators[,,i]%*%B.root	
+  n=dim(F$operators)[3]
+    
+  for(i in 1:n){
+    F$operators[,,i]=B.root%*%F$operators[,,i]%*%B.root	
   }	
+  
+  multF=freqdom(F$operators,F$freq)  
+  
+  dpca.var(multF)
 
-multF=freqdom(F$operators,F$freq)  
-
-  E = freqdom.eigen(multF)
-  Re(rowSums(E$values) / sum(freqdom.trace(multF)$values))
 
     
 }
