@@ -2,10 +2,50 @@
 % Please edit documentation in R/fts.rar.R
 \name{fts.rar}
 \alias{fts.rar}
-\title{Test}
+\title{Generates a functional autoregressive process.}
 \usage{
-fts.rar(n, d = 11, basis = create.fourier.basis(nbasis = d), ...)
+fts.rar(n = 100, d = 11, Psi = NULL, op.norms = NULL, burnin = 20,
+  noise = "mnorm", sigma = diag(d:1)/d, df = 4)
+}
+\arguments{
+\item{n}{number of observations to generate.}
+
+\item{d}{dimension of the underlying multivariate VAR model.}
+
+\item{Psi}{an array of \eqn{p\geq 1} coefficient matrices (need to be square matrices).
+\code{Psi[,,k]} is the k-th coefficient matrix. If Psi is provided then \code{d=dim(Psi)[1]}. If no value is set then we generate a
+functional autoregressive process of order 1. Then, \code{Psi[,,1]} is proportional to \eqn{\exp(-|i-j|\colon 1\leq i, j\leq d)}
+and such that Hilbert-Schmidt norm of the corresponding \code{lag-1} AR operator is 1/2.}
+
+\item{op.norms}{a vector with non-negative scalar entries. The length of the vector must equal to the order of the model.}
+
+\item{burnin}{an integer \eqn{\geq 0}. It specifies a number of initial  observations to be trashed to achieve stationarity.}
+
+\item{noise}{\code{mnorm'' for normal noise or}t'' for student t noise. If not specified ``mvnorm'' is chosen.}
+
+\item{sigma}{covariance  or scale matrix of the coefficients corresponding to functional innovations. The default value is diag(d:1)/d.}
+
+\item{df}{degrees of freqdom if noise = ``mt''.}
+}
+\value{
+An object of class ``fd''.
 }
 \description{
-Test
+Generates a functional autoregressive process.
+}
+\details{
+The purpose is to simulate a functional autoregressive process of the form
+\deqn{
+  X_t(u)=\sum_{k=1}^p \int_0^1\Psi_k(u,v) X_{t-k}(v)dv+\varepsilon_t(u),\quad 1\leq t\leq n.
+}
+Here we assume that the observations lie in a finite dimensional subspace of the function space spanned by
+Fourier basis functions \eqn{\boldsymbol{b}^\prime(u)=(b_1(u),\ldots, b_d(u))}. That is \eqn{X_t(u)=\boldsymbol{b}^\prime(u)\boldsymbol{X}_t}, \eqn{\varepsilon_t(u)=\boldsymbol{b}^\prime(u)\boldsymbol{\varepsilon}_t} and \eqn{\Psi_k(u,v)=\boldsymbol{b}^\prime(u)\boldsymbol{\Psi}_k \boldsymbol{b}(v)}. Then it follows that
+\deqn{
+  \boldsymbol{X}_t=\boldsymbol{\Psi}_1\boldsymbol{X}_{t-1}+\cdots+ \boldsymbol{\Psi}_p\boldsymbol{X}_{t-p}+\boldsymbol{\varepsilon}_t.
+}
+Hence the dynamic of the functional time series is described by a VAR(\eqn{p}) process.
+
+In this mathematical model the law of \eqn{\boldsymbol{\varepsilon}_t} is determined by \code{noise}.
+The matrices \code{Psi[,,k]} correspond to \eqn{\boldsymbol{\Psi}_k}. If \code{op.norms} is provided, then the coefficient
+matrices will be rescaled, such that the Hilbert-Schmidt norms of \eqn{\boldsymbol{\Psi}_k} correspond to the vector.
 }

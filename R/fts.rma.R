@@ -1,3 +1,34 @@
+#' Generates a functional autoregressive process.
+#'
+#' The purpose is to simulate a functional autoregressive process of the form
+#' \deqn{
+#' X_t(u)=\sum_{k=1}^p \int_0^1\Psi_k(u,v) X_{t-k}(v)dv+\varepsilon_t(u),\quad 1\leq t\leq n.
+#' }
+#' Here we assume that the observations lie in a finite dimensional subspace of the function space spanned by
+#' Fourier basis functions \eqn{\boldsymbol{b}^\prime(u)=(b_1(u),\ldots, b_d(u))}. That is \eqn{X_t(u)=\boldsymbol{b}^\prime(u)\boldsymbol{X}_t}, \eqn{\varepsilon_t(u)=\boldsymbol{b}^\prime(u)\boldsymbol{\varepsilon}_t} and \eqn{\Psi_k(u,v)=\boldsymbol{b}^\prime(u)\boldsymbol{\Psi}_k \boldsymbol{b}(v)}. Then it follows that
+#' \deqn{
+#' \boldsymbol{X}_t=\boldsymbol{\Psi}_1\boldsymbol{X}_{t-1}+\cdots+ \boldsymbol{\Psi}_p\boldsymbol{X}_{t-p}+\boldsymbol{\varepsilon}_t.
+#' }
+#' Hence the dynamic of the functional time series is described by a VAR(\eqn{p}) process.
+#' 
+#' In this mathematical model the law of \eqn{\boldsymbol{\varepsilon}_t} is determined by \code{noise}. The matrices \code{Psi[,,k]}
+#' correspond to \eqn{\boldsymbol{\Psi}_k}. If \code{op.norms} is provided, then the coefficient matrices will be rescaled, such that
+#' the Hilbert-Schmidt norms of \eqn{\boldsymbol{\Psi}_k} correspond to the vector.
+#' 
+#' @title Generates a functional autoregressive process.
+#' 
+#' @param n number of observations to generate.
+#' @param d dimension of the underlying multivariate VAR model.
+#' @param Psi an array of \eqn{p\geq 1} coefficient matrices (need to be square matrices). \code{Psi[,,k]} is the k-th coefficient
+#' matrix. If \code{Psi} is provided then \code{d=dim(Psi)[1]}. If no value is set then we generate a functional autoregressive
+#' process of order 1. Then, \code{Psi[,,1]} is proportional to \eqn{\exp(-|i-j|\colon 1\leq i, j\leq d)} and such that
+#' Hilbert-Schmidt norm of the corresponding lag-1 MA operator is 1/2.
+#' @param op.norms a vector with non-negative scalar entries. The length of the vector must equal to the order of the model.
+#' @param noise ``mnorm'' for normal noise or ``t'' for student t noise. If not specified ``mvnorm'' is chosen.
+#' @param sigma covariance  or scale matrix of the coefficients corresponding to functional innovations. The default value
+#' is \code{diag(d:1)/d}.
+#' @param df degrees of freqdom if noise = ``mt''.
+#' @return An object of class ``fd''.
 #' @export
 fts.rma = function(n=100, 
 d=11, Psi = NULL, op.norms = NULL, noise="mnorm", sigma=diag(d:1)/d, df=4)

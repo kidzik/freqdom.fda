@@ -1,6 +1,3 @@
-#' Plot kernels
-#'
-#' @export
 fts.plot.operators.lukasz = function(X, cor = FALSE, grid = FALSE, main="Operators"){
   plots = list()
   cmin = 0 #1e10
