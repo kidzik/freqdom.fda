@@ -7,12 +7,13 @@
 fts.dpca.KLexpansion(X, dpcs = fts.dpca.filters(fts.spectral.density(X)))
 }
 \arguments{
-\item{X}{a functional time series given as an object of class ``fd''.}
+\item{X}{a functional time series given as an object of class \code{\link[fda]{fd}}.}
 
-\item{dpcs}{an object of class \code{fts.timedom}, representing the dpca filters obtained from the sample X. If dpsc = NULL, then dpcs = fts.dpca.filter(fts.spectral.density(X)) is used.}
+\item{dpcs}{an object of class \code{fts.timedom}, representing the dpca filters
+obtained from the sample \code{X}. If \code{dpsc = NULL}, then \code{dpcs = fts.dpca.filter(fts.spectral.density(X))} is used.}
 }
 \value{
-An object of class \code{fd}.
+An object of class \code{\link[fda]{fd}}.
 }
 \description{
 Computes the dynamic KL expansion up to a given order.
@@ -31,3 +32,7 @@ Hormann Siegfried, Kidzinski Lukasz and Hallin Marc.
 \emph{Dynamic functional principal components.} Journal of the Royal
 Statistical Society: Series B (Statistical Methodology) 77.2 (2015): 319-348.
 }
+\seealso{
+The multivariate equivalent in the \code{freqdom} package: \code{\link[freqdom]{dpca.KLexpansion}}
+}
+\keyword{DPCA}

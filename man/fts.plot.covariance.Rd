@@ -8,16 +8,17 @@ fts.plot.covariance(X, Y = X, cor = FALSE, main = "Operators",
   res = 200, lags = 0:3, nlevels = 25)
 }
 \arguments{
-\item{X}{an object of class \code{fd} representing a functional data sample.\}
+\item{X}{an object of class \code{\link[fda]{fd}} representing a functional data sample.}
 
-\item{Y}{an object of class \code{fd} representing a functional data sample.\}
+\item{Y}{an object of class\code{\link[fda]{fd}} representing a functional data sample.}
 
-\item{cor}{if \code{FALSE} covariance kernels are plotted, if \code{TRUE} correlation kernel will be plotted.\}
+\item{cor}{if \code{FALSE} covariance kernels are plotted, if \code{TRUE} correlation kernel will be plotted.}
 
-\item{res}{number of discretization points to evaluate functional data.\}
+\item{res}{number of discretization points to evaluate functional data.}
 
-\item{nlevels}{number of color levels for the contour plot.\}
+\item{nlevels}{number of color levels for the contour plot.}
 }
 \description{
 Contour plot for the kernels of cross-covariance operators.
 }
+\keyword{plotting}

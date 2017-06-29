@@ -1,5 +1,6 @@
 #' Plot kernels
 #'
+#' @keywords plotting
 #' @export
 fts.plot.filters = function(X, Ndpc = 1, lags = -3:3, one.plot=FALSE,...)
 {

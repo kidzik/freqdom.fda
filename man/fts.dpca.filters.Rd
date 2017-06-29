@@ -4,23 +4,23 @@
 \alias{fts.dpca.filters}
 \title{From a given spectral density operator the dynamic principal component filter sequences are computed.}
 \usage{
-fts.dpca.filters(F, ...)
+fts.dpca.filter(F, Ndpc = F$basisX$nbasis, q = 30)
 }
 \arguments{
 \item{F}{spectral density operator, provided as an object of class \code{fts.freqdom}.}
 
-\item{Ndpc}{an integer \eqn{\in\{1,\ldots, d\}} with \eqn{d} = F\eqn{\$}basisX\eqn{\$}nbasis. It is the number of dynamic principal components to be computed. By default it is set equal to \eqn{d}.}
+\item{Ndpc}{an integer \eqn{\in\{1,\ldots, d\}} with \code{d = F$basisX$nbasis}. It is the number of dynamic principal components to be computed. By default it is set equal to \eqn{d}.}
 
 \item{q}{a non-negative integer. DPCA filter coefficients at lags \eqn{|h|\leq} q will be computed. By default \code{q=30}.}
 }
 \value{
 An object of class \code{fts.timedom}.  The list has the following components:
 \itemize{
-\item operators & an array. Each matrix in this array has dimension \eqn{\code{Ndpc}\times d} and is assigned to a certain lag.
+\item \code{operators} - an array. Each matrix in this array has dimension \eqn{\code{Ndpc}\times d} and is assigned to a certain lag.
 For a given lag \eqn{k}, the rows of the matrix correspond to the coefficient vector of the filter functions.
-\item lags a vector with the lags of the filter coefficients.
-\item basisX F\eqn{\$}basis, hence an object of class ``basisfd".
-\item correspondence the correspondence matrix \eqn{B}: all scalar products between basis functions.
+\item \code{lags} - a vector with the lags of the filter coefficients.
+\item \code{basisX} - \code{F$basis}, hence an object of class \code{\link{basis.fd}}.
+\item \code{correspondence} - the correspondence matrix \eqn{B}: all scalar products between basis functions.
 }
 }
 \description{
@@ -29,7 +29,7 @@ From a given spectral density operator the dynamic principal component filter se
 \details{
 Dynamic principal components are linear filters \eqn{(\phi_{\ell k}(u)\colon k\in \mathbf{Z})}, \eqn{1\leq\ell\leq d}.
 They are defined as the Fourier coefficients of the dynamic eigenvector \eqn{\varphi_\ell(\omega)(u)} of a spectral density
-kernel \eqn{f_\omega(u,v)}, i.e.\ \eqn{\int_0^1 f_\omega(u,v)\varphi_\ell(\omega)(v)dv=\lambda_\ell(\omega)\varphi_\ell(\omega)(u)}
+kernel \eqn{f_\omega(u,v)}, i.e. \eqn{\int_0^1 f_\omega(u,v)\varphi_\ell(\omega)(v)dv=\lambda_\ell(\omega)\varphi_\ell(\omega)(u)}
 and
 \deqn{
   \phi_{\ell k}(u):=\frac{1}{2\pi}\int_{-\pi}^\pi \varphi_\ell(\omega)(u) \exp(-ik\omega) d\omega.
@@ -51,3 +51,7 @@ Brillinger, D.
 Shumway, R.H., and Stoffer, D.S.
 \emph{Time Series Analysis and Its Applications} (2006), Springer, New York.
 }
+\seealso{
+The multivariate equivalent in the \code{freqdom} package: \code{\link[freqdom]{dpca.filters}}
+}
+\keyword{DPCA}

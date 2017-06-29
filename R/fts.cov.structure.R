@@ -19,15 +19,17 @@
 #' 
 #' @title This function is used to estimate a collection of cross-covariances operators of two stationary functional series.
 #' 
-#' @param X an object of class ``fd'' containing \eqn{T} functional observations.
-#' @param Y an object of class ``fd'' containing \eqn{T} functional observations.
+#' @param X an object of class \code{\link[fda]{fd}} containing \eqn{T} functional observations.
+#' @param Y an object of class \code{\link[fda]{fd}} containing \eqn{T} functional observations.
 #' @param lags an integer-valued vector \eqn{(\ell_1,\ldots, \ell_K)} containing the lags for which covariances are calculated.
-#' @return An object of class ``fts.timedom''. The list contains the following components:
-#' * operators an array. Element \code{[,,k]} contains the covariance matrix of the coefficient vectors of the two time series related to lag \eqn{\ell_k}.
-#' * lags returns the lags vector from the arguments.
-#' * basisX returns X\eqn{\$}basis, an object of class ``basis.fd''.
-#' * basisY returns Y\eqn{\$}basis, an object of class ``basis.fd''.
+#' @return An object of class \code{\link{fts.timedom}}. The list contains the following components:
+#' * \code{operators} - an array. Element \code{[,,k]} contains the covariance matrix of the coefficient vectors of the two time series related to lag \eqn{\ell_k}.
+#' * \code{lags} - returns the lags vector from the arguments.
+#' * \code{basisX} - returns \code{X$basis}, an object of class \code{\link[fda]{basis.fd}}.
+#' * \code{basisY} - returns \code{Y$basis}, an object of class \code{\link[fda]{basis.fd}}.
+#' @seealso The multivariate equivalent in the \code{freqdom} package: \code{\link[freqdom]{cov.structure}}
 #' @export
+#' @keywords time.domain
 fts.cov.structure = function(X, Y=X, ...){
   arg <- list(...)
   arg[['X']] <- t(X$coefs)

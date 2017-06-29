@@ -9,13 +9,15 @@
 #' 
 #' @title Computes the proportion and cumulative proportion of variance explained by dynamic principal components.
 #' 
-#' @param F spectral density operator, provided as an object of class \code{fts.freqdom}. To guarantee accuracy of
-#' numerical integration it is important that F\eqn{\$}freq is a dense grid of frequencies in \eqn{[-\pi,\pi]}.
+#' @param F spectral density operator, provided as an object of class \code{\link{fts.freqdom}}. To guarantee accuracy of
+#' numerical integration it is important that \code{F$freq} is a dense grid of frequencies in \eqn{[-\pi,\pi]}.
 #' @return A vector containing the \eqn{v_\ell}.
 #' @references Hormann Siegfried, Kidzinski Lukasz and Hallin Marc.
 #' \emph{Dynamic functional principal components.} Journal of the Royal
 #' Statistical Society: Series B (Statistical Methodology) 77.2 (2015): 319-348.
+#' @seealso The multivariate equivalent in the \code{freqdom} package: \code{\link[freqdom]{dpca.var}}
 #' @export
+#' @keywords DPCA
 fts.dpca.var = function(F){
   if (!is.fts.freqdom(F))
     stop("F must be an object of class fts.freqdom")

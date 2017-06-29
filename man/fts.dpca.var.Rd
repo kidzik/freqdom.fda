@@ -7,8 +7,8 @@
 fts.dpca.var(F)
 }
 \arguments{
-\item{F}{spectral density operator, provided as an object of class \code{fts.freqdom}. To guarantee accuracy of
-numerical integration it is important that F\eqn{\$}freq is a dense grid of frequencies in \eqn{[-\pi,\pi]}.}
+\item{F}{spectral density operator, provided as an object of class \code{\link{fts.freqdom}}. To guarantee accuracy of
+numerical integration it is important that \code{F$freq} is a dense grid of frequencies in \eqn{[-\pi,\pi]}.}
 }
 \value{
 A vector containing the \eqn{v_\ell}.
@@ -29,3 +29,7 @@ Hormann Siegfried, Kidzinski Lukasz and Hallin Marc.
 \emph{Dynamic functional principal components.} Journal of the Royal
 Statistical Society: Series B (Statistical Methodology) 77.2 (2015): 319-348.
 }
+\seealso{
+The multivariate equivalent in the \code{freqdom} package: \code{\link[freqdom]{dpca.var}}
+}
+\keyword{DPCA}

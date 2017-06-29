@@ -2,13 +2,17 @@
 #' 
 #' @title Contour plot of operator kernels.
 #' 
-#' @param A an object of class \code{fts.timedom} or \code{fts.freqdom}.
+#' @param A an object of class \code{fts.timedom} or \code{\link{fts.freqdom}}.
 #' @param res number of discretization points to evaluate functional data.
-#' @param lags a vector of integers. For objects of class \code{fts.timedom} the lags of the operators we want to plot.
-#' @param freq a vector of frequencies in \eqn{[-\pi,\pi]}. For an object of class \code{fts.freqdom} the frequencies at which we want to plot the operator. If the chosen frequencies are not contained in A\eqn{\$}freq, the closest frequencies will be used.
-#' @param axis if "Re" we plot the real part, if  "Im" we plot the imaginary part of a complex-valued operator.
+#' @param lags a vector of integers. For objects of class \code{\link{fts.timedom}}
+#' the lags of the operators we want to plot.
+#' @param freq a vector of frequencies in \eqn{[-\pi,\pi]}. For an object of class
+#' \code{fts.freqdom} the frequencies at which we want to plot the operator. If the
+#' chosen frequencies are not contained in \code{A$freq}, the closest frequencies will be used.
+#' @param axis if \code{"Re"} we plot the real part, if \code{"Im"} we plot the imaginary part of a complex-valued operator.
 #' @param nlevels number of color levels for the contour plot.
 #' @export
+#' @keywords plotting
 fts.plot.operators = function(A, res=200, lags = 0, freq = 0, axis = "Re", nlevels = 25){
   lags.label="lags"
   if (is.fts.timedom(A)){

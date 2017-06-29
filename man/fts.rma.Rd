@@ -19,15 +19,16 @@ Hilbert-Schmidt norm of the corresponding lag-1 MA operator is 1/2.}
 
 \item{op.norms}{a vector with non-negative scalar entries. The length of the vector must equal to the order of the model.}
 
-\item{noise}{\code{mnorm'' for normal noise or}t'' for student t noise. If not specified ``mvnorm'' is chosen.}
+\item{noise}{\code{"mnorm"} for normal noise or \code{"t"} for student t noise. If
+not specified \code{"mvnorm"} is chosen.}
 
 \item{sigma}{covariance  or scale matrix of the coefficients corresponding to functional innovations. The default value
 is \code{diag(d:1)/d}.}
 
-\item{df}{degrees of freqdom if noise = ``mt''.}
+\item{df}{degrees of freqdom if \code{noise = "mt"}.}
 }
 \value{
-An object of class ``fd''.
+An object of class \code{\link[fda]{fd}}.
 }
 \description{
 Generates a functional autoregressive process.
@@ -48,3 +49,7 @@ In this mathematical model the law of \eqn{\boldsymbol{\varepsilon}_t} is determ
 correspond to \eqn{\boldsymbol{\Psi}_k}. If \code{op.norms} is provided, then the coefficient matrices will be rescaled, such that
 the Hilbert-Schmidt norms of \eqn{\boldsymbol{\Psi}_k} correspond to the vector.
 }
+\seealso{
+The multivariate equivalent in the \code{freqdom} package: \code{\link[freqdom]{rma}}
+}
+\keyword{simulations}

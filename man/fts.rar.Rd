@@ -21,14 +21,16 @@ and such that Hilbert-Schmidt norm of the corresponding \code{lag-1} AR operator
 
 \item{burnin}{an integer \eqn{\geq 0}. It specifies a number of initial  observations to be trashed to achieve stationarity.}
 
-\item{noise}{\code{mnorm'' for normal noise or}t'' for student t noise. If not specified ``mvnorm'' is chosen.}
+\item{noise}{\code{"mnorm"} for normal noise or \code{"t"} for student t noise. If
+not specified \code{"mvnorm"} is chosen.}
 
-\item{sigma}{covariance  or scale matrix of the coefficients corresponding to functional innovations. The default value is diag(d:1)/d.}
+\item{sigma}{covariance  or scale matrix of the coefficients corresponding to
+functional innovations. The default value is \code{diag(d:1)/d}.}
 
-\item{df}{degrees of freqdom if noise = ``mt''.}
+\item{df}{degrees of freqdom if \code{noise = "mt"}.}
 }
 \value{
-An object of class ``fd''.
+An object of class \code{\link[fda]{fd}}.
 }
 \description{
 Generates a functional autoregressive process.
@@ -49,3 +51,7 @@ In this mathematical model the law of \eqn{\boldsymbol{\varepsilon}_t} is determ
 The matrices \code{Psi[,,k]} correspond to \eqn{\boldsymbol{\Psi}_k}. If \code{op.norms} is provided, then the coefficient
 matrices will be rescaled, such that the Hilbert-Schmidt norms of \eqn{\boldsymbol{\Psi}_k} correspond to the vector.
 }
+\seealso{
+The multivariate equivalent in the \code{freqdom} package: \code{\link[freqdom]{rar}}
+}
+\keyword{simulations}

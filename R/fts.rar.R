@@ -25,10 +25,14 @@
 #' and such that Hilbert-Schmidt norm of the corresponding \code{lag-1} AR operator is 1/2.
 #' @param op.norms a vector with non-negative scalar entries. The length of the vector must equal to the order of the model.
 #' @param burnin an integer \eqn{\geq 0}. It specifies a number of initial  observations to be trashed to achieve stationarity.
-#' @param noise ``mnorm'' for normal noise or ``t'' for student t noise. If not specified ``mvnorm'' is chosen.
-#' @param sigma covariance  or scale matrix of the coefficients corresponding to functional innovations. The default value is diag(d:1)/d.
-#' @param df degrees of freqdom if noise = ``mt''.
-#' @return An object of class ``fd''.
+#' @param noise \code{"mnorm"} for normal noise or \code{"t"} for student t noise. If
+#' not specified \code{"mvnorm"} is chosen.
+#' @param sigma covariance  or scale matrix of the coefficients corresponding to
+#' functional innovations. The default value is \code{diag(d:1)/d}.
+#' @param df degrees of freqdom if \code{noise = "mt"}.
+#' @return An object of class \code{\link[fda]{fd}}.
+#' @seealso The multivariate equivalent in the \code{freqdom} package: \code{\link[freqdom]{rar}}
+#' @keywords simulations
 #' @export
 fts.rar = function(n = 100, d = 11, Psi = NULL, op.norms = NULL, burnin = 20, noise = "mnorm", sigma = diag(d:1)/d, df = 4)
 {

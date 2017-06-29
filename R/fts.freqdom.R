@@ -1,8 +1,13 @@
 #' Creates an object of class  \code{fts.freqdom}. 
 #'
-#' This class is used to describe a frequency domain operator (for example a spectral density operator) on selected frequencies. Formally we consider an object of class \code{freqdom} and add some basis functions. Depending on the context, we have different interpretations for the new object.
+#' This class is used to describe a frequency domain operator (for example a spectral
+#' density operator) on selected frequencies. Formally we consider an object of class
+#' \code{\link{freqdom}} and add some basis functions. Depending on the context, we
+#' have different interpretations for the new object.
 #' 
-#' (I) In order to define an operator which maps between two functions spaces, the we interpret F\eqn{\$}operators as coefficients in the basis function expansion of the kernel of some finite rank operators \deqn{\mathcal{F}_k:\mathrm{span}(\code{basisY})+\mathrm{i}\, \mathrm{span}(\code{basisY})\to\mathrm{span}(\code{basisX})+\mathrm{i}\, \mathrm{span}(\code{basisX}).} The kernels are \eqn{f_k(u,v)=\boldsymbol{b}_1^\prime(u)\, F_k\, \boldsymbol{b}_2(v)}, where \eqn{\boldsymbol{b_1}(u)=(b_{11}(u),\ldots, b_{1d_1}(u))^\prime} and \eqn{\boldsymbol{b_2}(u)=(b_{21}(u),\ldots, b_{2d_1}(u))^\prime} are the basis functions provided by the arguments  basisX and basisY, respectively. Moreover, we consider frequencies \eqn{\{\omega_1,\ldots, \omega_K\}\subset[-\pi,\pi]}. The object this function creates corresponds to the mapping \eqn{\omega_k \mapsto f_k(u,v)}.
+#' (I) In order to define an operator which maps between two functions spaces, the we
+#' interpret \code{F$operators} as coefficients in the basis function expansion of
+#' the kernel of some finite rank operators \deqn{\mathcal{F}_k:\mathrm{span}(\code{basisY})+\mathrm{i}\, \mathrm{span}(\code{basisY})\to\mathrm{span}(\code{basisX})+\mathrm{i}\, \mathrm{span}(\code{basisX}).} The kernels are \eqn{f_k(u,v)=\boldsymbol{b}_1^\prime(u)\, F_k\, \boldsymbol{b}_2(v)}, where \eqn{\boldsymbol{b_1}(u)=(b_{11}(u),\ldots, b_{1d_1}(u))^\prime} and \eqn{\boldsymbol{b_2}(u)=(b_{21}(u),\ldots, b_{2d_1}(u))^\prime} are the basis functions provided by the arguments  basisX and basisY, respectively. Moreover, we consider frequencies \eqn{\{\omega_1,\ldots, \omega_K\}\subset[-\pi,\pi]}. The object this function creates corresponds to the mapping \eqn{\omega_k \mapsto f_k(u,v)}.
 #' 
 #' (II) We may ignore basisX, and represent the linear mapping
 #' \deqn{\mathcal{F}_k:\mathrm{span}(\code{basisY})+\mathrm{i}\, \mathrm{span}(\code{basisY})\to C^{d_1},}
@@ -15,14 +20,17 @@
 #' @title Creates an object of class  \code{fts.freqdom}. 
 #' 
 #' @param F an object of class freqdom.
-#' @param basisX an object of class ``basis.fd''.
-#' @param basisY an object of class ``basis.fd''.
-#' @return Returns an object of class  \code{fts.freqdom}. An object of class  \code{fts.freqdom} is a list containing the following components:
-#' * \code{operators} returns the array F\eqn{\$}operators.
-#' * \code{basisX} returns basisX as given in the argument.
-#' * \code{basisY} returns basisY as given in the argument.
-#' * \code{freq} returns the vector F\eqn{\$}freq.
+#' @param basisX an object of class \code{\link[fda]{basis.fd}}.
+#' @param basisY an object of class \code{\link[fda]{basis.fd}}.
+#' @return Returns an object of class  \code{fts.freqdom}. An object of class
+#' \code{fts.freqdom} is a list containing the following components:
+#' * \code{operators} - returns the array \code{F$operators}.
+#' * \code{basisX} - returns basisX as given in the argument.
+#' * \code{basisY} - returns basisY as given in the argument.
+#' * \code{freq} - returns the vector \code{F$freq}.
+#' @seealso The multivariate equivalent in the \code{freqdom} package: \code{\link[freqdom]{freqdom}}
 #' @export
+#' @keywords classes
 fts.freqdom = function (F, basisX, basisY=basisX)
 {
 	

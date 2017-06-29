@@ -18,3 +18,4 @@ Checks if an object belongs to the class \code{\link{fts.freqdom}}.
 \seealso{
 \code{\link{fts.freqdom}}, \code{\link{fts.timedom}}, \code{\link{is.fts.timedom}}
 }
+\keyword{classes}

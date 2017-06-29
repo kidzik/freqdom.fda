@@ -8,18 +8,22 @@ fts.plot.operators(A, res = 200, lags = 0, freq = 0, axis = "Re",
   nlevels = 25)
 }
 \arguments{
-\item{A}{an object of class \code{fts.timedom} or \code{fts.freqdom}.}
+\item{A}{an object of class \code{fts.timedom} or \code{\link{fts.freqdom}}.}
 
 \item{res}{number of discretization points to evaluate functional data.}
 
-\item{lags}{a vector of integers. For objects of class \code{fts.timedom} the lags of the operators we want to plot.}
+\item{lags}{a vector of integers. For objects of class \code{\link{fts.timedom}}
+the lags of the operators we want to plot.}
 
-\item{freq}{a vector of frequencies in \eqn{[-\pi,\pi]}. For an object of class \code{fts.freqdom} the frequencies at which we want to plot the operator. If the chosen frequencies are not contained in A\eqn{\$}freq, the closest frequencies will be used.}
+\item{freq}{a vector of frequencies in \eqn{[-\pi,\pi]}. For an object of class
+\code{fts.freqdom} the frequencies at which we want to plot the operator. If the
+chosen frequencies are not contained in \code{A$freq}, the closest frequencies will be used.}
 
-\item{axis}{if "Re" we plot the real part, if  "Im" we plot the imaginary part of a complex-valued operator.}
+\item{axis}{if \code{"Re"} we plot the real part, if \code{"Im"} we plot the imaginary part of a complex-valued operator.}
 
 \item{nlevels}{number of color levels for the contour plot.}
 }
 \description{
 Contour plot of operator kernels.
 }
+\keyword{plotting}

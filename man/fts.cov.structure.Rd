@@ -7,19 +7,19 @@
 fts.cov.structure(X, Y = X, ...)
 }
 \arguments{
-\item{X}{an object of class ``fd'' containing \eqn{T} functional observations.}
+\item{X}{an object of class \code{\link[fda]{fd}} containing \eqn{T} functional observations.}
 
-\item{Y}{an object of class ``fd'' containing \eqn{T} functional observations.}
+\item{Y}{an object of class \code{\link[fda]{fd}} containing \eqn{T} functional observations.}
 
 \item{lags}{an integer-valued vector \eqn{(\ell_1,\ldots, \ell_K)} containing the lags for which covariances are calculated.}
 }
 \value{
-An object of class ``fts.timedom''. The list contains the following components:
+An object of class \code{\link{fts.timedom}}. The list contains the following components:
 \itemize{
-\item operators an array. Element \code{[,,k]} contains the covariance matrix of the coefficient vectors of the two time series related to lag \eqn{\ell_k}.
-\item lags returns the lags vector from the arguments.
-\item basisX returns X\eqn{\$}basis, an object of class ``basis.fd''.
-\item basisY returns Y\eqn{\$}basis, an object of class ``basis.fd''.
+\item \code{operators} - an array. Element \code{[,,k]} contains the covariance matrix of the coefficient vectors of the two time series related to lag \eqn{\ell_k}.
+\item \code{lags} - returns the lags vector from the arguments.
+\item \code{basisX} - returns \code{X$basis}, an object of class \code{\link[fda]{basis.fd}}.
+\item \code{basisY} - returns \code{Y$basis}, an object of class \code{\link[fda]{basis.fd}}.
 }
 }
 \description{
@@ -43,3 +43,7 @@ Since \eqn{X_t(u)=\boldsymbol{b}_1^\prime(u)\mathbf{x}_t} and \eqn{Y_t(u)=\mathb
 where \eqn{\widehat{C}^{\mathbf{xy}}} is defined as for the function ``cov.structure'' for series of coefficient vectors
 \eqn{(\mathbf{x}_t\colon 1\leq t\leq T)} and \eqn{(\mathbf{y}_t\colon 1\leq t\leq T)}.
 }
+\seealso{
+The multivariate equivalent in the \code{freqdom} package: \code{\link[freqdom]{cov.structure}}
+}
+\keyword{time.domain}

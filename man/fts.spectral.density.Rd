@@ -4,27 +4,29 @@
 \alias{fts.spectral.density}
 \title{Estimates the spectral density operator and cross spectral density operator of functional time series.}
 \usage{
-fts.spectral.density(X, Y = X, ...)
+fts.spectral.density(X, Y=X, freq =(-1000:1000/1000)*pi,
+ q = max(1, floor((dim(X$coefs)[2])^{0.33})), weights = "Bartlett")
 }
 \arguments{
-\item{X}{an object of class ``fd'' containing \eqn{T} functional observations.}
+\item{X}{an object of class \code{\link[fda]{fd}} containing \eqn{T} functional observations.}
 
-\item{Y}{an object of class ``fd'' containing \eqn{T} functional observations.}
+\item{Y}{an object of class \code{\link[fda]{fd}} containing \eqn{T} functional observations.}
 
 \item{freq}{a vector containing frequencies in \eqn{[-\pi, \pi]} on which the spectral density should be evaluated. By default
 \code{freq=(-1000:1000/1000)*pi}.}
 
 \item{q}{window size for the kernel estimator, i.e. a positive integer. By default \code{q = max(1, floor((dim(X$coefs)[2])^{0.33}))}.}
 
-\item{weights}{kernel used in the spectral smoothing. For possible choices see \code{spectral density} in package \code{freqdom}. By default the Bartlett kernel is chosen.}
+\item{weights}{kernel used in the spectral smoothing. For possible choices see
+\code{\link[freqdom]{spectral.density}} in package \code{freqdom}. By default the Bartlett kernel is chosen.}
 }
 \value{
 Returns an object of class \code{fts.timedom}. The list is containing the following components:
 \itemize{
-\item operators an array. Element \code{[,,k]} in the coefficient matrix of the spectral density matrix evaluated at the \eqn{k}-th frequency listed in freq.
-\item lags returns the lags vector from the arguments.
-\item basisX returns X\eqn{\$}basis, an object of class ``basis.fd''.
-\item basisY returns Y\eqn{\$}basis, an object of class ``basis.fd''.
+\item \code{operators} - an array. Element \code{[,,k]} in the coefficient matrix of the spectral density matrix evaluated at the \eqn{k}-th frequency listed in freq.
+\item \code{lags} - returns the lags vector from the arguments.
+\item \code{basisX} - returns \code{X$basis}, an object of class \code{\link[fda]{basis.fd}}.
+\item \code{basisY} - returns \code{Y$basis}, an object of class \code{\link[fda]{basis.fd}}.
 }
 }
 \description{
@@ -35,16 +37,23 @@ Let \eqn{X_1(u),\ldots, X_T(u)} and \eqn{Y_1(u),\ldots, Y_T(u)} be two samples o
 \deqn{  
   f^{XY}_\omega(u,v)=\sum_{h\in\mathbf{Z}} \mathrm{Cov}(X_h(u),Y_0(v)) e^{-ih\omega}.
 }
-The function \code{fts.spectral.density} determines the empirical cross-spectral density kernel between the two time series. The estimator is of the form
+The function \code{\link{fts.spectral.density}} determines the empirical
+cross-spectral density kernel between the two time series. The estimator is of the
+form
 \deqn{
   \widehat{f}^{XY}_\omega(u,v)=\sum_{|h|\leq q} w(|k|/q)\widehat{c}^{XY}_h(u,v)e^{-ih\omega},
 }
-with \eqn{\widehat{c}^{XY}_h(u,v)} defined in \code{fts.cov.structure}. The other paremeters are as in \code{cov.structure}.
+with \eqn{\widehat{c}^{XY}_h(u,v)} defined in \code{\link{fts.cov.structure}}.
+The other paremeters are as in \code{\link[freqdom]{cov.structure}}.
 
 Since \eqn{X_t(u)=\boldsymbol{b}_1^\prime(u)\mathbf{x}_t} and \eqn{Y_t(u)=\mathbf{y}_t^\prime \boldsymbol{b}_2(u)} we can write
 \deqn{
   \widehat{f}^{XY}_\omega(u,v)=\boldsymbol{b}_1^\prime(u)\widehat{\mathcal{F}}^{\mathbf{xy}}(\omega)\boldsymbol{b}_2(v),
 }
-where \eqn{\widehat{\mathcal{F}}^{\mathbf{xy}}(\omega)} is defined as for the function \code{spectral.density} for series of coefficient vectors
+where \eqn{\widehat{\mathcal{F}}^{\mathbf{xy}}(\omega)} is defined as for the function \code{\link[freqdom]{spectral.density}} for series of coefficient vectors
 \eqn{(\mathbf{x}_t\colon 1\leq t\leq T)} and \eqn{(\mathbf{y}_t\colon 1\leq t\leq T)}.
 }
+\seealso{
+The multivariate equivalent in the \code{freqdom} package: \code{\link[freqdom]{spectral.density}}
+}
+\keyword{DPCA}
