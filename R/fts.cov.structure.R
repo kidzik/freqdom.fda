@@ -7,9 +7,9 @@
 #' where \eqn{\widehat{c}^{XY}_h(u,v)} is the empirical version of the covariance kernel \eqn{\mathrm{Cov}(X_h(u),Y_0(v))}.
 #' For a sample of size \eqn{T} we set \eqn{\hat\mu^X(u)=\frac{1}{T}\sum_{t=1}^T X_t(u)} and
 #' \eqn{\hat\mu^Y(v)=\frac{1}{T}\sum_{t=1}^T Y_t(v)}. Now for \eqn{h \geq 0}
-#' \deqn{\frac{1}{T}\sum_{t=1}^{T-h} (X_{t+h}(u)-\hat\mu^X(u))(Y_t(v)-\hat\mu^Y(v))'}
+#' \deqn{\frac{1}{T}\sum_{t=1}^{T-h} (X_{t+h}(u)-\hat\mu^X(u))(Y_t(v)-\hat\mu^Y(v))}
 #' and for \eqn{h < 0}
-#' \deqn{\frac{1}{T}\sum_{t=|h|+1}^{T} (X_{t+h}(u)-\hat\mu^X(u))(Y_t(v)-\hat\mu^Y(v))'.}
+#' \deqn{\frac{1}{T}\sum_{t=|h|+1}^{T} (X_{t+h}(u)-\hat\mu^X(u))(Y_t(v)-\hat\mu^Y(v)).}
 #' Since \eqn{X_t(u)=\boldsymbol{b}_1^\prime(u)\mathbf{x}_t} and \eqn{Y_t(u)=\mathbf{y}_t^\prime \boldsymbol{b}_2(u)} we can write 
 #' \deqn{
 #'   \widehat{c}^{XY}_h(u,v)=\boldsymbol{b}_1^\prime(u)\widehat{C}^{\mathbf{xy}}\boldsymbol{b}_2(v),
@@ -17,19 +17,19 @@
 #' where \eqn{\widehat{C}^{\mathbf{xy}}} is defined as for the function ``cov.structure'' for series of coefficient vectors 
 #' \eqn{(\mathbf{x}_t\colon 1\leq t\leq T)} and \eqn{(\mathbf{y}_t\colon 1\leq t\leq T)}.
 #' 
-#' @title This function is used to estimate a collection of cross-covariances operators of two stationary functional series.
+#' @title Estimate autocovariance and cross-covariances operators
 #' 
 #' @param X an object of class \code{\link[fda]{fd}} containing \eqn{T} functional observations.
 #' @param Y an object of class \code{\link[fda]{fd}} containing \eqn{T} functional observations.
 #' @param lags an integer-valued vector \eqn{(\ell_1,\ldots, \ell_K)} containing the lags for which covariances are calculated.
 #' @return An object of class \code{\link{fts.timedom}}. The list contains the following components:
-#' * \code{operators} - an array. Element \code{[,,k]} contains the covariance matrix of the coefficient vectors of the two time series related to lag \eqn{\ell_k}.
-#' * \code{lags} - returns the lags vector from the arguments.
-#' * \code{basisX} - returns \code{X$basis}, an object of class \code{\link[fda]{basis.fd}}.
-#' * \code{basisY} - returns \code{Y$basis}, an object of class \code{\link[fda]{basis.fd}}.
+#' * \code{operators} \eqn{\quad} an array. Element \code{[,,k]} contains the covariance matrix of the coefficient vectors of the two time series related to lag \eqn{\ell_k}.
+#' * \code{lags} \eqn{\quad} the lags vector from the arguments.
+#' * \code{basisX} \eqn{\quad} \code{X$basis}, an object of class \code{\link[fda]{basis.fd}}.
+#' * \code{basisY} \eqn{\quad} \code{Y$basis}, an object of class \code{\link[fda]{basis.fd}}.
 #' @seealso The multivariate equivalent in the \code{freqdom} package: \code{\link[freqdom]{cov.structure}}
 #' @export
-#' @keywords time.domain
+#' @keywords time-domain
 fts.cov.structure = function(X, Y=X, ...){
   arg <- list(...)
   arg[['X']] <- t(X$coefs)

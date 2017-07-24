@@ -6,6 +6,15 @@
 \usage{
 fts.plot.filters(X, Ndpc = 1, lags = -3:3, one.plot = FALSE, ...)
 }
+\arguments{
+\item{X}{a functional filter sequence given as object of class \code{\link{fts.timedom}}.}
+
+\item{Ndpc}{if Ndpc = k the first k filter sequences are plotted.}
+
+\item{lags}{number of lags to plot.}
+
+\item{one.plot}{if TRUE then functional filters corresponding belonging to the respective scores will all be plotted in the same graph.}
+}
 \description{
 Plot kernels
 }

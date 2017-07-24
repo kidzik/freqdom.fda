@@ -17,10 +17,10 @@ fts.freqdom(F, basisX, basisY = basisX)
 Returns an object of class  \code{fts.freqdom}. An object of class
 \code{fts.freqdom} is a list containing the following components:
 \itemize{
-\item \code{operators} - returns the array \code{F$operators}.
-\item \code{basisX} - returns basisX as given in the argument.
-\item \code{basisY} - returns basisY as given in the argument.
-\item \code{freq} - returns the vector \code{F$freq}.
+\item \code{operators} \eqn{\quad} returns the array \code{F$operators}.
+\item \code{basisX} \eqn{\quad} returns \code{basisX} as given in the argument.
+\item \code{basisY} \eqn{\quad} returns \code{basisY} as given in the argument.
+\item \code{freq} \eqn{\quad} returns the vector \code{F$freq}.
 }
 }
 \description{

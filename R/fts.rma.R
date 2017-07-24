@@ -1,4 +1,4 @@
-#' Generates a functional autoregressive process.
+#' Generate a functional moving average process.
 #'
 #' The purpose is to simulate a functional autoregressive process of the form
 #' \deqn{
@@ -15,7 +15,7 @@
 #' correspond to \eqn{\boldsymbol{\Psi}_k}. If \code{op.norms} is provided, then the coefficient matrices will be rescaled, such that
 #' the Hilbert-Schmidt norms of \eqn{\boldsymbol{\Psi}_k} correspond to the vector.
 #' 
-#' @title Generates a functional autoregressive process.
+#' @title Simulate functional moving average processes
 #' 
 #' @param n number of observations to generate.
 #' @param d dimension of the underlying multivariate VAR model.

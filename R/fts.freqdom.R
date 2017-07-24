@@ -24,10 +24,10 @@
 #' @param basisY an object of class \code{\link[fda]{basis.fd}}.
 #' @return Returns an object of class  \code{fts.freqdom}. An object of class
 #' \code{fts.freqdom} is a list containing the following components:
-#' * \code{operators} - returns the array \code{F$operators}.
-#' * \code{basisX} - returns basisX as given in the argument.
-#' * \code{basisY} - returns basisY as given in the argument.
-#' * \code{freq} - returns the vector \code{F$freq}.
+#' * \code{operators} \eqn{\quad} returns the array \code{F$operators}.
+#' * \code{basisX} \eqn{\quad} returns \code{basisX} as given in the argument.
+#' * \code{basisY} \eqn{\quad} returns \code{basisY} as given in the argument.
+#' * \code{freq} \eqn{\quad} returns the vector \code{F$freq}.
 #' @seealso The multivariate equivalent in the \code{freqdom} package: \code{\link[freqdom]{freqdom}}
 #' @export
 #' @keywords classes

@@ -2,7 +2,7 @@
 % Please edit documentation in R/fts.rar.R
 \name{fts.rar}
 \alias{fts.rar}
-\title{Generates a functional autoregressive process.}
+\title{Simulate functional autoregressive processes}
 \usage{
 fts.rar(n = 100, d = 11, Psi = NULL, op.norms = NULL, burnin = 20,
   noise = "mnorm", sigma = diag(d:1)/d, df = 4)
@@ -33,7 +33,7 @@ functional innovations. The default value is \code{diag(d:1)/d}.}
 An object of class \code{\link[fda]{fd}}.
 }
 \description{
-Generates a functional autoregressive process.
+Generates functional autoregressive process.
 }
 \details{
 The purpose is to simulate a functional autoregressive process of the form
