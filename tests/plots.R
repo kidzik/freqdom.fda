@@ -1,9 +1,8 @@
-install(".")
-library(fda.ts)
-data(pm10)
+library("fda.ts")
+data("pm10")
 
 ## Dynamic PCA ##
-X = center.fd(X)
+X = center.fd(pm10)
 SD = fts.spectral.density(X,q=20)
 XI.est = fts.dpca.filters(SD)  # finds the optimal filter
 Y.est = fts.dpca.scores(X, dpcs = XI.est)

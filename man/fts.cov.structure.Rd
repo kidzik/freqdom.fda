@@ -18,8 +18,8 @@ An object of class \code{\link{fts.timedom}}. The list contains the following co
 \itemize{
 \item \code{operators} \eqn{\quad} an array. Element \code{[,,k]} contains the covariance matrix of the coefficient vectors of the two time series related to lag \eqn{\ell_k}.
 \item \code{lags} \eqn{\quad} the lags vector from the arguments.
-\item \code{basisX} \eqn{\quad} \code{X$basis}, an object of class \code{\link[fda]{basis.fd}}.
-\item \code{basisY} \eqn{\quad} \code{Y$basis}, an object of class \code{\link[fda]{basis.fd}}.
+\item \code{basisX} \eqn{\quad} \code{X$basis}, an object of class \code{basis.fd} (see \code{\link[fda]{create.basis}})
+\item \code{basisY} \eqn{\quad} \code{Y$basis}, an object of class \code{basis.fd} (see \code{\link[fda]{create.basis}})
 }
 }
 \description{

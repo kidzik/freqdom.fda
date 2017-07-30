@@ -19,7 +19,7 @@ An object of class \code{fts.timedom}.  The list has the following components:
 \item \code{operators} \eqn{\quad} an array. Each matrix in this array has dimension \eqn{\code{Ndpc}\times d} and is assigned to a certain lag.
 For a given lag \eqn{k}, the rows of the matrix correspond to the coefficient vector of the filter functions.
 \item \code{lags} \eqn{\quad} a vector with the lags of the filter coefficients.
-\item \code{basisX} \eqn{\quad} \code{F$basis}, hence an object of class \code{\link{basis.fd}}.
+\item \code{basisX} \eqn{\quad} \code{F$basis}, hence an object of class \code{basis.fd} (see \code{\link[fda]{create.basis}}).
 \item \code{correspondence} \eqn{\quad} the correspondence matrix: all scalar products between basis functions.
 }
 }

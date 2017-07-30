@@ -20,8 +20,8 @@
 #' @title Creates an object of class  \code{fts.freqdom}. 
 #' 
 #' @param F an object of class freqdom.
-#' @param basisX an object of class \code{\link[fda]{basis.fd}}.
-#' @param basisY an object of class \code{\link[fda]{basis.fd}}.
+#' @param basisX an object of class \code{basis.fd} (see \code{\link[fda]{create.basis}})
+#' @param basisY an object of class \code{basis.fd} (see \code{\link[fda]{create.basis}})
 #' @return Returns an object of class  \code{fts.freqdom}. An object of class
 #' \code{fts.freqdom} is a list containing the following components:
 #' * \code{operators} \eqn{\quad} returns the array \code{F$operators}.
@@ -30,6 +30,8 @@
 #' * \code{freq} \eqn{\quad} returns the vector \code{F$freq}.
 #' @seealso The multivariate equivalent in the \code{freqdom} package: \code{\link[freqdom]{freqdom}}
 #' @export
+#' @import fda
+#' @import freqdom
 #' @keywords classes
 fts.freqdom = function (F, basisX, basisY=basisX)
 {

@@ -25,8 +25,8 @@ Returns an object of class \code{fts.timedom}. The list is containing the follow
 \itemize{
 \item \code{operators} \eqn{\quad} an array. Element \code{[,,k]} in the coefficient matrix of the spectral density matrix evaluated at the \eqn{k}-th frequency listed in \code{freq}.
 \item \code{lags} \eqn{\quad} returns the lags vector from the arguments.
-\item \code{basisX} \eqn{\quad} returns \code{X$basis}, an object of class \code{\link[fda]{basis.fd}}.
-\item \code{basisY} \eqn{\quad} returns \code{Y$basis}, an object of class \code{\link[fda]{basis.fd}}.
+\item \code{basisX} \eqn{\quad} returns \code{X$basis}, an object of class \code{basis.fd} (see \code{\link[fda]{create.basis}}).
+\item \code{basisY} \eqn{\quad} returns \code{Y$basis}, an object of class \code{basis.fd} (see \code{\link[fda]{create.basis}})
 }
 }
 \description{

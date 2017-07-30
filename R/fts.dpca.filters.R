@@ -23,7 +23,7 @@
 #' * \code{operators} \eqn{\quad} an array. Each matrix in this array has dimension \eqn{\code{Ndpc}\times d} and is assigned to a certain lag.
 #' For a given lag \eqn{k}, the rows of the matrix correspond to the coefficient vector of the filter functions.
 #' * \code{lags} \eqn{\quad} a vector with the lags of the filter coefficients.
-#' * \code{basisX} \eqn{\quad} \code{F$basis}, hence an object of class \code{\link{basis.fd}}.
+#' * \code{basisX} \eqn{\quad} \code{F$basis}, hence an object of class \code{basis.fd} (see \code{\link[fda]{create.basis}}).
 #' * \code{correspondence} \eqn{\quad} the correspondence matrix: all scalar products between basis functions.
 #' @references Hormann, S., Kidzinski, L., and Hallin, M.
 #' \emph{Dynamic functional principal components.} Journal of the Royal

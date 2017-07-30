@@ -5,6 +5,9 @@
 #' @param lags number of lags to plot.
 #' @param one.plot if TRUE then functional filters corresponding belonging to the respective scores will all be plotted in the same graph.
 #' @keywords plotting
+#' @importFrom stats update
+#' @importFrom grDevices colorRampPalette
+#' @importFrom graphics abline filled.contour legend lines plot text title
 #' @export
 fts.plot.filters = function(X, Ndpc = 1, lags = -3:3, one.plot=FALSE,...)
 {

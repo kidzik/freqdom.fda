@@ -34,8 +34,8 @@
 #' @return Returns an object of class \code{fts.timedom}. The list is containing the following components:
 #' * \code{operators} \eqn{\quad} an array. Element \code{[,,k]} in the coefficient matrix of the spectral density matrix evaluated at the \eqn{k}-th frequency listed in \code{freq}.
 #' * \code{lags} \eqn{\quad} returns the lags vector from the arguments.
-#' * \code{basisX} \eqn{\quad} returns \code{X$basis}, an object of class \code{\link[fda]{basis.fd}}.
-#' * \code{basisY} \eqn{\quad} returns \code{Y$basis}, an object of class \code{\link[fda]{basis.fd}}.
+#' * \code{basisX} \eqn{\quad} returns \code{X$basis}, an object of class \code{basis.fd} (see \code{\link[fda]{create.basis}}).
+#' * \code{basisY} \eqn{\quad} returns \code{Y$basis}, an object of class \code{basis.fd} (see \code{\link[fda]{create.basis}})
 #' @seealso The multivariate equivalent in the \code{freqdom} package: \code{\link[freqdom]{spectral.density}}
 #' @export
 #' @keywords DPCA

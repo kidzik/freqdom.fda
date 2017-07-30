@@ -33,6 +33,7 @@
 #' @return An object of class \code{\link[fda]{fd}}.
 #' @seealso The multivariate equivalent in the \code{freqdom} package: \code{\link[freqdom]{rar}}
 #' @keywords simulations
+#' @import mvtnorm
 #' @export
 fts.rar = function(n = 100, d = 11, Psi = NULL, op.norms = NULL, burnin = 20, noise = "mnorm", sigma = diag(d:1)/d, df = 4)
 {

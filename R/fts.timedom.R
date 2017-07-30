@@ -18,8 +18,8 @@
 #' @title Object of class \code{fts.timedom}
 #' 
 #' @param A an object of class timedom.
-#' @param basisX an object of class \code{\link[fda]{basis.fd}}.
-#' @param basisY an object of class \code{\link[fda]{basis.fd}}.
+#' @param basisX an object of class \code{basis.fd} (see \code{\link[fda]{create.basis}})
+#' @param basisY an object of class \code{basis.fd} (see \code{\link[fda]{create.basis}})
 #' @return Returns an object of class  \code{fts.freqdom}. An object of class  \code{fts.freqdom} is a list containing the following components:
 #' * \code{operators} \eqn{\quad} returns the array \code{A$operators}.
 #' * \code{basisX} \eqn{\quad} returns basisX as given in the argument.

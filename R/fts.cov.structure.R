@@ -25,8 +25,8 @@
 #' @return An object of class \code{\link{fts.timedom}}. The list contains the following components:
 #' * \code{operators} \eqn{\quad} an array. Element \code{[,,k]} contains the covariance matrix of the coefficient vectors of the two time series related to lag \eqn{\ell_k}.
 #' * \code{lags} \eqn{\quad} the lags vector from the arguments.
-#' * \code{basisX} \eqn{\quad} \code{X$basis}, an object of class \code{\link[fda]{basis.fd}}.
-#' * \code{basisY} \eqn{\quad} \code{Y$basis}, an object of class \code{\link[fda]{basis.fd}}.
+#' * \code{basisX} \eqn{\quad} \code{X$basis}, an object of class \code{basis.fd} (see \code{\link[fda]{create.basis}})
+#' * \code{basisY} \eqn{\quad} \code{Y$basis}, an object of class \code{basis.fd} (see \code{\link[fda]{create.basis}})
 #' @seealso The multivariate equivalent in the \code{freqdom} package: \code{\link[freqdom]{cov.structure}}
 #' @export
 #' @keywords time-domain

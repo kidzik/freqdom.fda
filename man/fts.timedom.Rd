@@ -9,9 +9,9 @@ fts.timedom(A, basisX, basisY = basisX)
 \arguments{
 \item{A}{an object of class timedom.}
 
-\item{basisX}{an object of class \code{\link[fda]{basis.fd}}.}
+\item{basisX}{an object of class \code{basis.fd} (see \code{\link[fda]{create.basis}})}
 
-\item{basisY}{an object of class \code{\link[fda]{basis.fd}}.}
+\item{basisY}{an object of class \code{basis.fd} (see \code{\link[fda]{create.basis}})}
 }
 \value{
 Returns an object of class  \code{fts.freqdom}. An object of class  \code{fts.freqdom} is a list containing the following components:

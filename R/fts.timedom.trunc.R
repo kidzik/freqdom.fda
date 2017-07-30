@@ -1,4 +1,8 @@
+#' Truncate functional timedom object
+#' 
+#' @title Truncate functional timedom object
 #' @export
+#' @keywords internal
 fts.timedom.trunc = function(A, lags){
   if(!is.fts.timedom(A))
     stop("A must be an object of class fts.timedom")
