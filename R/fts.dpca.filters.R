@@ -14,7 +14,6 @@
 #' For more details we refer to  Hormann et al. (2015).
 #' 
 #' @title Functional dynamic PCA filters
-#' @usage fts.dpca.filter(F, Ndpc = F$basisX$nbasis, q = 30)
 #' 
 #' @param F spectral density operator, provided as an object of class \code{fts.freqdom}.
 #' @param Ndpc an integer \eqn{\in\{1,\ldots, d\}} with \eqn{d=}\code{F$basisX$nbasis}. It is the number of dynamic principal components to be computed. By default it is set equal to \eqn{d}.
@@ -35,7 +34,7 @@
 #' @seealso The multivariate equivalent in the \code{freqdom} package: \code{\link[freqdom]{dpca.filters}}
 #' @export
 #' @keywords DPCA
-fts.dpca.filters = function(F,...){
+fts.dpca.filters = function(F, Ndpc = F$basisX$nbasis, q = 30){
   if(!is.fts.freqdom(F))
   stop("F must be of class fts.freqdom")	
 
@@ -46,31 +45,28 @@ fts.dpca.filters = function(F,...){
   B.root=eigen(B)$vectors%*%diag(sqrt(eigen(B)$values))%*%  t(eigen(B)$vectors)
   B.root.minus=solve(B.root)	
   
-n=dim(F$operators)[3]
-  
-for(i in 1:n){
-  F$operators[,,i]=B.root%*%F$operators[,,i]%*%B.root	
+  n=dim(F$operators)[3]
+    
+  for(i in 1:n){
+    F$operators[,,i]=B.root%*%F$operators[,,i]%*%B.root	
   }	
-
-multF=freqdom(F$operators,F$freq)  
-
-arg <- list(...)
-  arg[["F"]] = multF
   
-A = do.call(dpca.filters, arg)
-
-nfilters=dim(A$operators)[3]
-ncomp=dim(A$operators)[1]
-
-if(ncomp==1){
-for(i in 1:nfilters){
-	A$operators[,,i]=t(B.root.minus%*%as.matrix(A$operators[,,i]))
-} 
-}
-else{
-for(i in 1:nfilters){
-	A$operators[,,i]=t(B.root.minus%*%t(A$operators[,,i]))
-}
-} 
-    fts.timedom(A, F$basisX, F$basisX)
+  multF=freqdom(F$operators,F$freq)  
+  
+  A = dpca.filters(F=multF, Ndpc = Ndpc, q = q)
+  
+  nfilters=dim(A$operators)[3]
+  ncomp=dim(A$operators)[1]
+  
+  if(ncomp==1){
+    for(i in 1:nfilters){
+    	A$operators[,,i]=t(B.root.minus%*%as.matrix(A$operators[,,i]))
+    } 
+  }
+  else{
+    for(i in 1:nfilters){
+    	A$operators[,,i]=t(B.root.minus%*%t(A$operators[,,i]))
+    }
+  } 
+  fts.timedom(A, F$basisX, F$basisX)
 }

@@ -4,8 +4,8 @@
 \alias{fts.spectral.density}
 \title{Functional spectral and cross-spectral density operator}
 \usage{
-fts.spectral.density(X, Y=X, freq =(-1000:1000/1000)*pi,
- q = max(1, floor((dim(X$coefs)[2])^{0.33})), weights = "Bartlett")
+fts.spectral.density(X, Y = X, freq = (-1000:1000/1000) * pi,
+  q = ceiling((dim(X$coefs)[2])^{     0.33 }), weights = "Bartlett")
 }
 \arguments{
 \item{X}{an object of class \code{\link[fda]{fd}} containing \eqn{T} functional observations.}

@@ -21,8 +21,6 @@
 #' \eqn{(\mathbf{x}_t\colon 1\leq t\leq T)} and \eqn{(\mathbf{y}_t\colon 1\leq t\leq T)}.
 #' 
 #' @title Functional spectral and cross-spectral density operator 
-#' @usage fts.spectral.density(X, Y=X, freq =(-1000:1000/1000)*pi,
-#'  q = max(1, floor((dim(X$coefs)[2])^{0.33})), weights = "Bartlett")
 #' 
 #' @param X an object of class \code{\link[fda]{fd}} containing \eqn{T} functional observations.
 #' @param Y an object of class \code{\link[fda]{fd}} containing \eqn{T} functional observations.
@@ -39,15 +37,7 @@
 #' @seealso The multivariate equivalent in the \code{freqdom} package: \code{\link[freqdom]{spectral.density}}
 #' @export
 #' @keywords DPCA
-fts.spectral.density = function(X, Y=X, ...){
-  arg <- list(...)
-  arg[['X']] <- t(X$coefs)
-  arg[['Y']] <- t(Y$coefs)
-  
-  if (!("q" %in% names(arg)))
-    arg[['q']] = ceiling((dim(X$coefs)[2])^(1/3)) 
-  
-  
-  fdom = do.call(spectral.density, arg)
+fts.spectral.density = function(X, Y=X, freq =(-1000:1000/1000)*pi,q = ceiling((dim(X$coefs)[2])^{0.33}), weights = "Bartlett"){
+  fdom = spectral.density(X=t(X$coefs),Y=t(Y$coefs),freq=freq,q=q,weights=weights)
   fts.freqdom(fdom,basisX=X$basis,basisY=Y$basis)
-  }
+}

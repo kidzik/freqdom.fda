@@ -4,6 +4,7 @@
 #' @param Ndpc if Ndpc = k the first k filter sequences are plotted.
 #' @param lags number of lags to plot.
 #' @param one.plot if TRUE then functional filters corresponding belonging to the respective scores will all be plotted in the same graph.
+#' @param ... arguments \code{col, lwd, lty} passed to \code{plot}
 #' @keywords plotting
 #' @importFrom stats update
 #' @importFrom grDevices colorRampPalette

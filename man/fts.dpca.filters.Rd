@@ -4,7 +4,7 @@
 \alias{fts.dpca.filters}
 \title{Functional dynamic PCA filters}
 \usage{
-fts.dpca.filter(F, Ndpc = F$basisX$nbasis, q = 30)
+fts.dpca.filters(F, Ndpc = F$basisX$nbasis, q = 30)
 }
 \arguments{
 \item{F}{spectral density operator, provided as an object of class \code{fts.freqdom}.}

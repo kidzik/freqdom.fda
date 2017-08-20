@@ -14,6 +14,8 @@ fts.plot.filters(X, Ndpc = 1, lags = -3:3, one.plot = FALSE, ...)
 \item{lags}{number of lags to plot.}
 
 \item{one.plot}{if TRUE then functional filters corresponding belonging to the respective scores will all be plotted in the same graph.}
+
+\item{...}{arguments \code{col, lwd, lty} passed to \code{plot}}
 }
 \description{
 Plot kernels

@@ -4,7 +4,7 @@
 \alias{fts.cov.structure}
 \title{Estimate autocovariance and cross-covariances operators}
 \usage{
-fts.cov.structure(X, Y = X, ...)
+fts.cov.structure(X, Y = X, lags = 0)
 }
 \arguments{
 \item{X}{an object of class \code{\link[fda]{fd}} containing \eqn{T} functional observations.}
