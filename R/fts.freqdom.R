@@ -48,7 +48,7 @@ fts.freqdom = function (F, basisX, basisY=basisX)
 	res = F
 	res$basisX=basisX
 	res$basisY=basisY
-	class(res) = 'fts.freqdom'
+	class(res) = c("fts.freqdom","freqdom")
 	res
 }
 

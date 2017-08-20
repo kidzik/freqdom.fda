@@ -48,12 +48,13 @@ fts.dpca.filters = function(F, Ndpc = F$basisX$nbasis, q = 30){
   n=dim(F$operators)[3]
     
   for(i in 1:n){
-    F$operators[,,i]=B.root%*%F$operators[,,i]%*%B.root	
-  }	
+    F$operators[,,i]=B.root%*%F$operators[,,i]%*%B.root
+  }
   
   multF=freqdom(F$operators,F$freq)  
   
-  A = dpca.filters(F=multF, Ndpc = Ndpc, q = q)
+  class(F) = "freqdom"
+  A = dpca.filters(F=F, Ndpc = Ndpc, q = q)
   
   nfilters=dim(A$operators)[3]
   ncomp=dim(A$operators)[1]
@@ -61,12 +62,12 @@ fts.dpca.filters = function(F, Ndpc = F$basisX$nbasis, q = 30){
   if(ncomp==1){
     for(i in 1:nfilters){
     	A$operators[,,i]=t(B.root.minus%*%as.matrix(A$operators[,,i]))
-    } 
+    }
   }
   else{
     for(i in 1:nfilters){
     	A$operators[,,i]=t(B.root.minus%*%t(A$operators[,,i]))
     }
-  } 
+  }
   fts.timedom(A, F$basisX, F$basisX)
 }

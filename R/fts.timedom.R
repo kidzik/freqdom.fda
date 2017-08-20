@@ -44,7 +44,7 @@ fts.timedom = function (A, basisX, basisY=basisX)
 	res = A
 	res$basisX=basisX
 	res$basisY=basisY
-	class(res) = 'fts.timedom'
+	class(res) = c("fts.timedom","timedom")
 	res
 }
 
