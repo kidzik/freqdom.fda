@@ -2,7 +2,7 @@
 % Please edit documentation in R/fts.rma.R
 \name{fts.rma}
 \alias{fts.rma}
-\title{Generates a functional autoregressive process.}
+\title{Simulate functional moving average processes}
 \usage{
 fts.rma(n = 100, d = 11, Psi = NULL, op.norms = NULL, noise = "mnorm",
   sigma = diag(d:1)/d, df = 4)
@@ -31,7 +31,7 @@ is \code{diag(d:1)/d}.}
 An object of class \code{\link[fda]{fd}}.
 }
 \description{
-Generates a functional autoregressive process.
+Generate a functional moving average process.
 }
 \details{
 The purpose is to simulate a functional autoregressive process of the form

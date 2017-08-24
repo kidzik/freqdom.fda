@@ -2,24 +2,24 @@
 % Please edit documentation in R/fts.timedom.R
 \name{fts.timedom}
 \alias{fts.timedom}
-\title{Creates an object of class \code{fts.timedom}. This object corresponds to a sequence of linear operators.}
+\title{Object of class \code{fts.timedom}}
 \usage{
 fts.timedom(A, basisX, basisY = basisX)
 }
 \arguments{
 \item{A}{an object of class timedom.}
 
-\item{basisX}{an object of class \code{\link[fda]{basis.fd}}.}
+\item{basisX}{an object of class \code{basis.fd} (see \code{\link[fda]{create.basis}})}
 
-\item{basisY}{an object of class \code{\link[fda]{basis.fd}}.}
+\item{basisY}{an object of class \code{basis.fd} (see \code{\link[fda]{create.basis}})}
 }
 \value{
 Returns an object of class  \code{fts.freqdom}. An object of class  \code{fts.freqdom} is a list containing the following components:
 \itemize{
-\item \code{operators} - returns the array \code{A$operators}.
-\item \code{basisX} - returns basisX as given in the argument.
-\item \code{basisY} - returns basisY as given in the argument.
-\item \code{lags} - returns \code{A$lags}.
+\item \code{operators} \eqn{\quad} returns the array \code{A$operators}.
+\item \code{basisX} \eqn{\quad} returns basisX as given in the argument.
+\item \code{basisY} \eqn{\quad} returns basisY as given in the argument.
+\item \code{lags} \eqn{\quad} returns \code{A$lags}.
 }
 }
 \description{

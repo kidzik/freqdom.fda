@@ -20,34 +20,24 @@
 #' where \eqn{\widehat{\mathcal{F}}^{\mathbf{xy}}(\omega)} is defined as for the function \code{\link[freqdom]{spectral.density}} for series of coefficient vectors 
 #' \eqn{(\mathbf{x}_t\colon 1\leq t\leq T)} and \eqn{(\mathbf{y}_t\colon 1\leq t\leq T)}.
 #' 
-#' @title Estimates the spectral density operator and cross spectral density operator of functional time series. 
-#' @usage fts.spectral.density(X, Y=X, freq =(-1000:1000/1000)*pi,
-#'  q = max(1, floor((dim(X$coefs)[2])^{0.33})), weights = "Bartlett")
+#' @title Functional spectral and cross-spectral density operator 
 #' 
 #' @param X an object of class \code{\link[fda]{fd}} containing \eqn{T} functional observations.
 #' @param Y an object of class \code{\link[fda]{fd}} containing \eqn{T} functional observations.
-#' @param freq a vector containing frequencies in \eqn{[-\pi, \pi]} on which the spectral density should be evaluated. By default
-#' \code{freq=(-1000:1000/1000)*pi}.
-#' @param q window size for the kernel estimator, i.e. a positive integer. By default \code{q = max(1, floor((dim(X$coefs)[2])^{0.33}))}.
+#' @param freq a vector containing frequencies in \eqn{[-\pi, \pi]} on which the spectral density should be evaluated.
+#' By default \code{freq=(-1000:1000/1000)*pi}.
+#' @param q window size for the kernel estimator, i.e. a positive integer. By default we choose \code{q = max(1, floor((dim(X$coefs)[2])^{0.33}))}.
 #' @param weights kernel used in the spectral smoothing. For possible choices see
 #' \code{\link[freqdom]{spectral.density}} in package \code{freqdom}. By default the Bartlett kernel is chosen.
 #' @return Returns an object of class \code{fts.timedom}. The list is containing the following components:
-#' * \code{operators} - an array. Element \code{[,,k]} in the coefficient matrix of the spectral density matrix evaluated at the \eqn{k}-th frequency listed in freq.
-#' * \code{lags} - returns the lags vector from the arguments.
-#' * \code{basisX} - returns \code{X$basis}, an object of class \code{\link[fda]{basis.fd}}.
-#' * \code{basisY} - returns \code{Y$basis}, an object of class \code{\link[fda]{basis.fd}}.
+#' * \code{operators} \eqn{\quad} an array. Element \code{[,,k]} in the coefficient matrix of the spectral density matrix evaluated at the \eqn{k}-th frequency listed in \code{freq}.
+#' * \code{lags} \eqn{\quad} returns the lags vector from the arguments.
+#' * \code{basisX} \eqn{\quad} returns \code{X$basis}, an object of class \code{basis.fd} (see \code{\link[fda]{create.basis}}).
+#' * \code{basisY} \eqn{\quad} returns \code{Y$basis}, an object of class \code{basis.fd} (see \code{\link[fda]{create.basis}})
 #' @seealso The multivariate equivalent in the \code{freqdom} package: \code{\link[freqdom]{spectral.density}}
 #' @export
 #' @keywords DPCA
-fts.spectral.density = function(X, Y=X, ...){
-  arg <- list(...)
-  arg[['X']] <- t(X$coefs)
-  arg[['Y']] <- t(Y$coefs)
-  
-  if (!("q" %in% names(arg)))
-    arg[['q']] = ceiling((dim(X$coefs)[2])^(1/3)) 
-  
-  
-  fdom = do.call(spectral.density, arg)
+fts.spectral.density = function(X, Y=X, freq =(-1000:1000/1000)*pi,q = ceiling((dim(X$coefs)[2])^{0.33}), weights = "Bartlett"){
+  fdom = spectral.density(X=t(X$coefs),Y=t(Y$coefs),freq=freq,q=q,weights=weights)
   fts.freqdom(fdom,basisX=X$basis,basisY=Y$basis)
-  }
+}

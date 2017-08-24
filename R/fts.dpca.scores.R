@@ -8,14 +8,14 @@
 #' 
 #' For more details we refer to  Hormann et al. (2015).
 #' 
-#' @title Computes the dynamic principal component scores of a functional time series.
+#' @title Functional dynamic principal component scores
 #' 
 #' @param X a functional time series given as an object of class \code{\link[fda]{fd}}.
 #' @param dpcs an object of class \code{fts.timedom}, representing the dpca filters
 #' obtained from the sample \code{X}. If \code{dpsc = NULL}, then
 #' \code{dpcs = fts.dpca.filter(fts.spectral.density(X))} is used.
 #' @return A \eqn{(T\times \code{Ndpc})}-matix with \code{Ndpc = dim(dpcs$operators)[1]}. The \eqn{\ell}-th column contains the \eqn{\ell}-th dynamic principal component score sequence.
-#' @references Hormann Siegfried, Kidzinski Lukasz and Hallin Marc.
+#' @references Hormann, S., Kidzinski, L., and Hallin, M.
 #' \emph{Dynamic functional principal components.} Journal of the Royal
 #' Statistical Society: Series B (Statistical Methodology) 77.2 (2015): 319-348.
 #' @seealso The multivariate equivalent in the \code{freqdom} package: \code{\link[freqdom]{dpca.scores}}
@@ -27,6 +27,7 @@ fts.dpca.scores = function(X,dpcs = fts.dpca.filters(spectral.density(X))){
   B=inprod(basisY,basisY)
   multX = t(B%*%X$coefs)
   A=timedom(dpcs$operators,dpcs$lags)
+
   dpca.scores(multX,A)
 } 
 

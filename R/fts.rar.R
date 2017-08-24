@@ -1,4 +1,4 @@
-#' Generates a functional autoregressive process.
+#' Generates functional autoregressive process.
 #'
 #' The purpose is to simulate a functional autoregressive process of the form
 #' \deqn{
@@ -15,7 +15,7 @@
 #' The matrices \code{Psi[,,k]} correspond to \eqn{\boldsymbol{\Psi}_k}. If \code{op.norms} is provided, then the coefficient
 #' matrices will be rescaled, such that the Hilbert-Schmidt norms of \eqn{\boldsymbol{\Psi}_k} correspond to the vector.
 #' 
-#' @title Generates a functional autoregressive process.
+#' @title Simulate functional autoregressive processes
 #' 
 #' @param n number of observations to generate.
 #' @param d dimension of the underlying multivariate VAR model.
@@ -33,6 +33,7 @@
 #' @return An object of class \code{\link[fda]{fd}}.
 #' @seealso The multivariate equivalent in the \code{freqdom} package: \code{\link[freqdom]{rar}}
 #' @keywords simulations
+#' @import mvtnorm
 #' @export
 fts.rar = function(n = 100, d = 11, Psi = NULL, op.norms = NULL, burnin = 20, noise = "mnorm", sigma = diag(d:1)/d, df = 4)
 {

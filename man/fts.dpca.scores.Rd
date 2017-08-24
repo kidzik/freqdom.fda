@@ -2,7 +2,7 @@
 % Please edit documentation in R/fts.dpca.scores.R
 \name{fts.dpca.scores}
 \alias{fts.dpca.scores}
-\title{Computes the dynamic principal component scores of a functional time series.}
+\title{Functional dynamic principal component scores}
 \usage{
 fts.dpca.scores(X, dpcs = fts.dpca.filters(spectral.density(X)))
 }
@@ -29,7 +29,7 @@ where \eqn{\phi_{\ell k}(v)} and \eqn{d} are explained in \code{\link{fts.dpca.f
 For more details we refer to  Hormann et al. (2015).
 }
 \references{
-Hormann Siegfried, Kidzinski Lukasz and Hallin Marc.
+Hormann, S., Kidzinski, L., and Hallin, M.
 \emph{Dynamic functional principal components.} Journal of the Royal
 Statistical Society: Series B (Statistical Methodology) 77.2 (2015): 319-348.
 }

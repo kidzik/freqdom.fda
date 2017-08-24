@@ -15,16 +15,16 @@
 #' \deqn{\mathcal{A}_k: R^{d_1}\to\mathrm{span}(\code{basisX}),}
 #' by considering \eqn{a_k(u):=\boldsymbol{b}_1^\prime(u)A_k} and \eqn{\mathcal{A}_k(y)=a_k(u)y}.
 #' 
-#' @title Creates an object of class \code{fts.timedom}. This object corresponds to a sequence of linear operators.
+#' @title Object of class \code{fts.timedom}
 #' 
 #' @param A an object of class timedom.
-#' @param basisX an object of class \code{\link[fda]{basis.fd}}.
-#' @param basisY an object of class \code{\link[fda]{basis.fd}}.
+#' @param basisX an object of class \code{basis.fd} (see \code{\link[fda]{create.basis}})
+#' @param basisY an object of class \code{basis.fd} (see \code{\link[fda]{create.basis}})
 #' @return Returns an object of class  \code{fts.freqdom}. An object of class  \code{fts.freqdom} is a list containing the following components:
-#' * \code{operators} - returns the array \code{A$operators}.
-#' * \code{basisX} - returns basisX as given in the argument.
-#' * \code{basisY} - returns basisY as given in the argument.
-#' * \code{lags} - returns \code{A$lags}.
+#' * \code{operators} \eqn{\quad} returns the array \code{A$operators}.
+#' * \code{basisX} \eqn{\quad} returns basisX as given in the argument.
+#' * \code{basisY} \eqn{\quad} returns basisY as given in the argument.
+#' * \code{lags} \eqn{\quad} returns \code{A$lags}.
 #' @seealso The multivariate equivalent in the \code{freqdom} package: \code{\link[freqdom]{timedom}}
 #' @export
 #' @keywords classes
@@ -44,7 +44,7 @@ fts.timedom = function (A, basisX, basisY=basisX)
 	res = A
 	res$basisX=basisX
 	res$basisY=basisY
-	class(res) = 'fts.timedom'
+	class(res) = c("fts.timedom","timedom")
 	res
 }
 

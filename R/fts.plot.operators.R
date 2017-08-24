@@ -52,7 +52,9 @@ fts.plot.operators = function(A, res=200, lags = 0, freq = 0, axis = "Re", nleve
     for(i in 1:(nlags-1)){	
       abline(v=i,lty=2,col="black")
     }
-    axis(1, at=1:nlags - 0.5, tick = FALSE, labels = format(round(lags, 2), nsmall = 2)) # axis(2)
+    if (is.fts.freqdom(A))
+      lags = format(round(lags, 2), nsmall = 2)
+    axis(1, at=1:nlags - 0.5, tick = FALSE, labels = lags) # axis(2)
   }
   
   filled.contour(1:(res*nlags)/res, int2, z, color.palette=colorRampPalette(c("blue", "white", "red"), space="rgb"),

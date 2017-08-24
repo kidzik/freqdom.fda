@@ -2,7 +2,7 @@
 % Please edit documentation in R/fts.dpca.KLexpansion.R
 \name{fts.dpca.KLexpansion}
 \alias{fts.dpca.KLexpansion}
-\title{Computes the dynamic KL expansion up to a given order.}
+\title{Dynamic KL expansion}
 \usage{
 fts.dpca.KLexpansion(X, dpcs = fts.dpca.filters(fts.spectral.density(X)))
 }
@@ -28,7 +28,7 @@ where \eqn{\phi_{\ell k}(v)} and \eqn{d} are explained in  \code{fts.dpca.filter
 For more details we refer to Hormann et al. (2015).
 }
 \references{
-Hormann Siegfried, Kidzinski Lukasz and Hallin Marc.
+Hormann, S., Kidzinski, L., and Hallin, M.
 \emph{Dynamic functional principal components.} Journal of the Royal
 Statistical Society: Series B (Statistical Methodology) 77.2 (2015): 319-348.
 }
