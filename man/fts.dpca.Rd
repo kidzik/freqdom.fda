@@ -31,7 +31,7 @@ uncorrelated components. Compared to classical functional principal components, 
 are uncorrelated in time, allowing simpler modeling of the processes and maximizing long run variance of the projection.
 }
 \details{
-This convenience function applies the FDPCA methodology and returns filters (\code{\link{fts.dpca.filters}}), scores
+This convenient function applies the FDPCA methodology and returns filters (\code{\link{fts.dpca.filters}}), scores
 (\code{\link{fts.dpca.scores}}), the spectral density (\code{\link{fts.spectral.density}}), variances (\code{\link{fts.dpca.var}}) and
 Karhunen-Leove expansion (\code{\link{fts.dpca.KLexpansion}}).
 
