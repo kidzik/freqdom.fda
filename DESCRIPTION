@@ -1,4 +1,4 @@
-Package: fda.ts
+Package: freqdom.fda
 Type: Package
 Title: Functional time series: dynamic FPCA
 Version: 0.9.1

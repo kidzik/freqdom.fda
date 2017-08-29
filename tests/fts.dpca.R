@@ -1,6 +1,6 @@
 #install(".")
 library("freqdom")
-library("fda.ts")
+library("freqdom.fda")
 data(pm10)
 pm10 = center.fd(pm10)
 X = center.fd(pm10)

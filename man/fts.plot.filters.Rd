@@ -4,10 +4,10 @@
 \alias{fts.plot.filters}
 \title{Plot kernels}
 \usage{
-fts.plot.filters(X, Ndpc = 1, lags = -3:3, one.plot = FALSE, ...)
+fts.plot.filters(A, Ndpc = 1, lags = -3:3, one.plot = FALSE, ...)
 }
 \arguments{
-\item{X}{a functional filter sequence given as object of class \code{\link{fts.timedom}}.}
+\item{A}{a functional filter sequence given as object of class \code{\link{fts.timedom}}.}
 
 \item{Ndpc}{if Ndpc = k the first k filter sequences are plotted.}
 

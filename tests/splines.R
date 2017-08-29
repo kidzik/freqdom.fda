@@ -1,4 +1,4 @@
-library(fda.ts)
+library("freqdom.fda")
 
 ## TEST spline basis
 X = fts.rar(100)

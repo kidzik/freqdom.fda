@@ -1,4 +1,4 @@
-library("fda.ts")
+library("freqdom.fda")
 data("pm10")
 
 ## Dynamic PCA ##
