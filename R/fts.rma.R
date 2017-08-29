@@ -64,7 +64,7 @@ d=11, Psi = NULL, op.norms = NULL, noise="mnorm", sigma=diag(d:1)/d, df=4)
 
   if(is.null(op.norms)){
   op.norms=c()
-  for(i in 1:p){op.norms=c(op.norms,norm(Psi[,,i]))}
+  for(i in 1:p){op.norms=c(op.norms,norm(Psi[,,i],type="f"))}
   }
 
   for(i in 1:p){

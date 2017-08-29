@@ -65,7 +65,7 @@ fts.rar = function(n = 100, d = 11, Psi = NULL, op.norms = NULL, burnin = 20, no
 
   if(is.null(op.norms)){
   op.norms=c()
-  for(i in 1:p){op.norms=c(op.norms,norm(Psi[,,i]))}
+  for(i in 1:p){op.norms=c(op.norms,norm(Psi[,,i],type="f"))}
   }
 
   for(i in 1:p){

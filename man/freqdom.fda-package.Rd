@@ -8,43 +8,34 @@
 \title{Functional time series: dynamic FPCA}
 \description{
 Implementation of dynamic functional principle component analysis (FDPCA),
-simulation of FAR and FMA processes and frequency domain tools for funcional data.
+simulation of functional AR and functional MA processes and frequency domain tools for funcional data.
 The package is a wrapper for functionality of the multivariate package \pkg{freqdom}
 for applying frequency domain on objects from \pkg{fda}.
-Compared to \pkg{freqdom} multiple new visualization methods are added --
+Compared to \pkg{freqdom} some new visualization methods are added --
 adequate only if data has functional structure.
 }
 \details{
-\pkg{fda.ts} package allows you to functional time series objects
-in both time and frequency domains. We implement dynamic functional principal component analysis
-methods, enabling spectral decomposition of a stationary functional time series into uncorrelated components.
+\pkg{fda.ts} package allows you to analyse functional time series objects
+in both time and frequency domain. The main feature is dynamic functional principal component analysis.
+This method allows to transform a stationary functional time series into a vector process with
+mutually uncorrelated component processes.
 
-Dynamic functional principal component analysis enables estimation of temporal filters which
-transform a functional time series into a vector time series with uncorrelated components,
-maximizing the long run variance explained.
 There are two key differnces between classical PCA and dynamic PCA:
 \itemize{
-\item Components returned by the dynamic procedure are uncorrelated in time, i.e. for any \eqn{i \neq j}
-and \eqn{l \in Z}, \eqn{Y_i(t)} and \eqn{Y_j(t_l)} are uncorrelated,
-\item The mapping maximizes the long run variance, which, in case of stationary functional time series, means
+\item Component processes returned by the dynamic procedure are mutually uncorrelated,
+\item The mapping maximizes the long run variance of compoments, which, in case of stationary functional time series, means
 that the process reconstructed from and \eqn{d > 0} first dynamic principal components
-better approximates your functional time series process than the first \eqn{d} classic principal components.
+better approximates the original functional time series process than the first \eqn{d} classic principal components.
 }
 
-Thanks to the unique structure of functional data, where multivariate components are on the
-same scale and are directly related to each other, one can visualize properties of the
-filters and frequency domain tools by presenting 2D kernels.
+For functional data one can conveniently visualize properties of the
+filters, covariances or the spectral density operator.
 
-For details, please refer to literature below and to help pages of functions \code{\link{fts.dpca}}
+For details we refer to the literature below and to help pages of functions \code{\link{fts.dpca}}
 for estimating the components, \code{\link{fts.dpca.scores}} for estimating scores and
 \code{\link{fts.dpca.KLexpansion}} for retrieving the signal from components.
 
-Apart from frequency domain techniques for stationary functional time series,
-\pkg{freqdom} provides a toolset of operators such as a functional spectral density operator
-(\code{\link{fts.spectral.density}}) as well as simulation of functional time series
-models \code{\link{fts.rar}}, \code{\link{fts.rma}} generating functional
-autoregressive and moving average respectively.
-These functions enable developing new techniques based on the Frequency domain analysis.
+The package \pkg{fda.ts} require the package \pkg{freqdom} provides the analogue multivariate toolset.
 }
 \references{
 Hormann Siegfried, Kidzinski Lukasz and Hallin Marc.
