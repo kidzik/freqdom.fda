@@ -38,7 +38,7 @@
 #' X = center.fd(pm10)
 #'
 #' # Compute functional dynamic principal components with only one component
-#' res.dpca = fts.dpca(X, Ndpc = 1)
+#' res.dpca = fts.dpca(X, Ndpc = 1, freq=(-25:25/25)*pi) # leave default freq for higher precision
 #' plot(res.dpca$Xhat)
 #' fts.plot.filters(res.dpca$filters)
 #' 

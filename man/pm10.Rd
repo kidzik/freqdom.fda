@@ -7,7 +7,7 @@
 \format{\eqn{175} daily distribution functions in the \code{fd} format
 from the \pkg{fda} package}
 \source{
-FA 17C of the Styrian government (Mag. Schopper)
+Styrian Government, FA 17C Technical Environmental Protection and Safety, Air Quality Control Section,
 }
 \usage{
 pm10
@@ -30,8 +30,5 @@ plot(pm10)
 Hormann, Siegfried, Brigitte Pfeiler, and Ernst Stadlober.
 \emph{Analysis and prediction of particulate matter PM10 for the winter season in Graz.}
 Austrian Journal of Statistics 34.4 (2005): 307-326.
-}
-\author{
-FA 17C of the Styrian government (Mag. Schopper)
 }
 \keyword{datasets}

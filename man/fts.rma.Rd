@@ -17,9 +17,10 @@ matrix. If \code{Psi} is provided then \code{d=dim(Psi)[1]}. If no value is set 
 process of order 1. Then, \code{Psi[,,1]} is proportional to \eqn{\exp(-|i-j|\colon 1\leq i, j\leq d)} and such that
 Hilbert-Schmidt norm of the corresponding lag-1 MA operator is 1/2.}
 
-\item{op.norms}{a vector with non-negative scalar entries. The length of the vector must equal to the order of the model.}
+\item{op.norms}{a vector with non-negative scalar entries to which the \code{Psi} are supposed to be scaled.
+The length of the vector must equal to the order of the model.}
 
-\item{noise}{\code{"mnorm"} for normal noise or \code{"t"} for student t noise. If
+\item{noise}{\code{"mnorm"} for normal noise or \code{"mt"} for student t noise. If
 not specified \code{"mvnorm"} is chosen.}
 
 \item{sigma}{covariance  or scale matrix of the coefficients corresponding to functional innovations. The default value
@@ -48,6 +49,20 @@ Hence the dynamic of the functional time series is described by a VAR(\eqn{p}) p
 In this mathematical model the law of \eqn{\boldsymbol{\varepsilon}_t} is determined by \code{noise}. The matrices \code{Psi[,,k]}
 correspond to \eqn{\boldsymbol{\Psi}_k}. If \code{op.norms} is provided, then the coefficient matrices will be rescaled, such that
 the Hilbert-Schmidt norms of \eqn{\boldsymbol{\Psi}_k} correspond to the vector.
+}
+\examples{
+# Generate a FMA process without burnin (starting from 0)
+fts = fts.rma(n = 5, d = 5)
+plot(fts)
+
+# Generate observations with very strong dependance
+fts = fts.rma(n = 100, d = 5, op.norms = 0.999)
+plot(fts)
+
+# Generate observations with very strong dependance and noise
+# from the multivariate t distribution
+fts = fts.rma(n = 100, d = 5, op.norms = 0.999, noise = "mt")
+plot(fts)
 }
 \seealso{
 The multivariate equivalent in the \code{freqdom} package: \code{\link[freqdom]{rma}}

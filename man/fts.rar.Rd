@@ -17,7 +17,8 @@ fts.rar(n = 100, d = 11, Psi = NULL, op.norms = NULL, burnin = 20,
 functional autoregressive process of order 1. Then, \code{Psi[,,1]} is proportional to \eqn{\exp(-|i-j|\colon 1\leq i, j\leq d)}
 and such that Hilbert-Schmidt norm of the corresponding \code{lag-1} AR operator is 1/2.}
 
-\item{op.norms}{a vector with non-negative scalar entries. The length of the vector must equal to the order of the model.}
+\item{op.norms}{a vector with non-negative scalar entries to which the \code{Psi} are supposed to be scaled. The length of the
+vector must equal to the order of the model.}
 
 \item{burnin}{an integer \eqn{\geq 0}. It specifies a number of initial  observations to be trashed to achieve stationarity.}
 
@@ -50,6 +51,20 @@ Hence the dynamic of the functional time series is described by a VAR(\eqn{p}) p
 In this mathematical model the law of \eqn{\boldsymbol{\varepsilon}_t} is determined by \code{noise}.
 The matrices \code{Psi[,,k]} correspond to \eqn{\boldsymbol{\Psi}_k}. If \code{op.norms} is provided, then the coefficient
 matrices will be rescaled, such that the Hilbert-Schmidt norms of \eqn{\boldsymbol{\Psi}_k} correspond to the vector.
+}
+\examples{
+# Generate a FAR process without burnin (starting from 0)
+fts = fts.rar(n = 5, d = 5, burnin = 0)
+plot(fts)
+
+# Generate a FAR process with burnin 50 (starting from observations
+# already resambling the final distribution)
+fts = fts.rar(n = 5, d = 5, burnin = 50)
+plot(fts)
+
+# Generate observations with very strong dependance
+fts = fts.rar(n = 100, d = 5, burnin = 50, op.norms = 0.999)
+plot(fts)
 }
 \seealso{
 The multivariate equivalent in the \code{freqdom} package: \code{\link[freqdom]{rar}}

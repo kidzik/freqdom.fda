@@ -37,6 +37,22 @@
 #' @seealso The multivariate equivalent in the \code{freqdom} package: \code{\link[freqdom]{spectral.density}}
 #' @export
 #' @keywords DPCA
+#' @examples 
+#' data(pm10)
+#' X = center.fd(pm10)
+#' 
+#' # Compute the spectral density operator with Bartlett weights
+#' SD = fts.spectral.density(X, freq = (-50:50/50) * pi, q = 2, weight="Bartlett")
+#' fts.plot.operators(SD, freq = -2:2)
+#' 
+#' # Compute the spectral density operator with Tukey weights
+#' SD = fts.spectral.density(X, freq = (-50:50/50) * pi, q = 2, weight="Tukey")
+#' fts.plot.operators(SD, freq = -2:2)
+#' # Note relatively small difference between the two plots
+#' 
+#' # Now, compute the spectral density operator with Tukey weights and larger q
+#' SD = fts.spectral.density(X, freq = (-50:50/50) * pi, q = 5, weight="Tukey")
+#' fts.plot.operators(SD, freq = -2:2)
 fts.spectral.density = function(X, Y=X, freq =(-1000:1000/1000)*pi,q = ceiling((dim(X$coefs)[2])^{0.33}), weights = "Bartlett"){
   fdom = spectral.density(X=t(X$coefs),Y=t(Y$coefs),freq=freq,q=q,weights=weights)
   fts.freqdom(fdom,basisX=X$basis,basisY=Y$basis)

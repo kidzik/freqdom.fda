@@ -1,3 +1,8 @@
+UPDATES compared to the last submission:
+* More examples
+* Clear source in pm10 data file
+* Authors, year and title of the paper in the description
+
 This package wraps freqdom package for functional data (using fda package) and
 adds functional-data-specific plotting. Since majority of users can
 benefit from freqdom package without the functional data part, we created

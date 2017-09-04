@@ -40,6 +40,24 @@ density operator (provided as on object of class \code{fts.freqdom}) the functio
 
 For more details we refer to  Hormann et al. (2015).
 }
+\examples{
+data(pm10)
+X = center.fd(pm10)
+
+# Compute the spectral density operator with Bartlett weights
+SD = fts.spectral.density(X, freq = (-50:50/50) * pi, q = 2, weight="Bartlett")
+filters = fts.dpca.filters(SD, 2, q = 10)
+
+# Plot filters 1 and 2
+fts.plot.filters(filters, 2, one.plot = TRUE)
+
+# Recompute with a different estimate of the spectral density (largerg q)
+SD = fts.spectral.density(X, freq = (-50:50/50) * pi, q = 5, weight="Bartlett")
+filters = fts.dpca.filters(SD, 2, q = 10)
+
+# Plot filters 1 and 2
+fts.plot.filters(filters, 2, one.plot = TRUE)
+}
 \references{
 Hormann, S., Kidzinski, L., and Hallin, M.
 \emph{Dynamic functional principal components.} Journal of the Royal

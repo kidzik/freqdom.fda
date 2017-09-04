@@ -43,6 +43,23 @@ Since \eqn{X_t(u)=\boldsymbol{b}_1^\prime(u)\mathbf{x}_t} and \eqn{Y_t(u)=\mathb
 where \eqn{\widehat{C}^{\mathbf{xy}}} is defined as for the function ``cov.structure'' for series of coefficient vectors
 \eqn{(\mathbf{x}_t\colon 1\leq t\leq T)} and \eqn{(\mathbf{y}_t\colon 1\leq t\leq T)}.
 }
+\examples{
+# Generate an autoregressive process
+fts = fts.rar(d=3)
+
+# Get covariance at lag 0
+fts.cov.structure(fts, lags = 0)
+
+# Get covariance at lag 10
+fts.cov.structure(fts, lags = 10)
+
+# Get entire covariance structure between -20 and 20
+fts.cov.structure(fts, lags = -20:20)
+
+# Compute covariance with another process
+fts0 = fts + fts.rma(d=3)
+fts.cov.structure(fts, fts0, lags = -2:2)
+}
 \seealso{
 The multivariate equivalent in the \code{freqdom} package: \code{\link[freqdom]{cov.structure}}
 }

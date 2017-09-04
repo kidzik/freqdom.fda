@@ -23,8 +23,9 @@
 #' matrix. If \code{Psi} is provided then \code{d=dim(Psi)[1]}. If no value is set then we generate a functional autoregressive
 #' process of order 1. Then, \code{Psi[,,1]} is proportional to \eqn{\exp(-|i-j|\colon 1\leq i, j\leq d)} and such that
 #' Hilbert-Schmidt norm of the corresponding lag-1 MA operator is 1/2.
-#' @param op.norms a vector with non-negative scalar entries. The length of the vector must equal to the order of the model.
-#' @param noise \code{"mnorm"} for normal noise or \code{"t"} for student t noise. If
+#' @param op.norms a vector with non-negative scalar entries to which the \code{Psi} are supposed to be scaled.
+#' The length of the vector must equal to the order of the model.
+#' @param noise \code{"mnorm"} for normal noise or \code{"mt"} for student t noise. If
 #' not specified \code{"mvnorm"} is chosen.
 #' @param sigma covariance  or scale matrix of the coefficients corresponding to functional innovations. The default value
 #' is \code{diag(d:1)/d}.
@@ -33,21 +34,34 @@
 #' @seealso The multivariate equivalent in the \code{freqdom} package: \code{\link[freqdom]{rma}}
 #' @keywords simulations
 #' @export
+#' @examples 
+#' # Generate a FMA process without burnin (starting from 0)
+#' fts = fts.rma(n = 5, d = 5)
+#' plot(fts)
+#' 
+#' # Generate observations with very strong dependance
+#' fts = fts.rma(n = 100, d = 5, op.norms = 0.999)
+#' plot(fts)
+#' 
+#' # Generate observations with very strong dependance and noise
+#' # from the multivariate t distribution
+#' fts = fts.rma(n = 100, d = 5, op.norms = 0.999, noise = "mt")
+#' plot(fts)
 fts.rma = function(n=100, 
 d=11, Psi = NULL, op.norms = NULL, noise="mnorm", sigma=diag(d:1)/d, df=4)
 {
   
   if(!is.null(Psi) && d!=dim(Psi)[1])
-	stop("d must be equal to the dimension of Psi")
+  	stop("d must be equal to the dimension of Psi")
 
   if(!is.null(Psi) && dim(Psi)[1]!=dim(Psi)[2])
-	stop("coefficients need to be square matrices")
+	  stop("coefficients need to be square matrices")
 
   if(!is.null(Psi))
-	d=dim(Psi)[1]
+  	d=dim(Psi)[1]
 
   if(d %% 2==0)
-	stop("d must be odd")
+	  stop("d must be odd")
   
   if (is.null(Psi)){
 		Psi = exp(-(1:d))%*%t(exp(-(1:d)))
@@ -63,12 +77,12 @@ d=11, Psi = NULL, op.norms = NULL, noise="mnorm", sigma=diag(d:1)/d, df=4)
   p=dim(Psi)[3]
 
   if(is.null(op.norms)){
-  op.norms=c()
-  for(i in 1:p){op.norms=c(op.norms,norm(Psi[,,i],type="f"))}
+    op.norms=c()
+    for(i in 1:p){op.norms=c(op.norms,norm(Psi[,,i],type="f"))}
   }
 
   for(i in 1:p){
- 	Psi[,,i]=Psi[,,i]/norm(Psi[,,i],type="f")*op.norms[i]
+ 	  Psi[,,i]=Psi[,,i]/norm(Psi[,,i],type="f")*op.norms[i]
   }	
   
   arg <- list()

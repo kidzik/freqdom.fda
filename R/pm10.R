@@ -14,8 +14,7 @@
 #' 
 #' @format \eqn{175} daily distribution functions in the \code{fd} format
 #' from the \pkg{fda} package
-#' @source FA 17C of the Styrian government (Mag. Schopper)
-#' @author FA 17C of the Styrian government (Mag. Schopper)
+#' @source Styrian Government, FA 17C Technical Environmental Protection and Safety, Air Quality Control Section, 
 #' @examples
 #' data(pm10)
 #' summary(pm10)

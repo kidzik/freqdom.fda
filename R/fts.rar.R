@@ -23,7 +23,8 @@
 #' \code{Psi[,,k]} is the k-th coefficient matrix. If Psi is provided then \code{d=dim(Psi)[1]}. If no value is set then we generate a
 #' functional autoregressive process of order 1. Then, \code{Psi[,,1]} is proportional to \eqn{\exp(-|i-j|\colon 1\leq i, j\leq d)}
 #' and such that Hilbert-Schmidt norm of the corresponding \code{lag-1} AR operator is 1/2.
-#' @param op.norms a vector with non-negative scalar entries. The length of the vector must equal to the order of the model.
+#' @param op.norms a vector with non-negative scalar entries to which the \code{Psi} are supposed to be scaled. The length of the
+#' vector must equal to the order of the model.
 #' @param burnin an integer \eqn{\geq 0}. It specifies a number of initial  observations to be trashed to achieve stationarity.
 #' @param noise \code{"mnorm"} for normal noise or \code{"t"} for student t noise. If
 #' not specified \code{"mvnorm"} is chosen.
@@ -35,20 +36,33 @@
 #' @keywords simulations
 #' @import mvtnorm
 #' @export
+#' @examples 
+#' # Generate a FAR process without burnin (starting from 0)
+#' fts = fts.rar(n = 5, d = 5, burnin = 0)
+#' plot(fts)
+#' 
+#' # Generate a FAR process with burnin 50 (starting from observations
+#' # already resambling the final distribution)
+#' fts = fts.rar(n = 5, d = 5, burnin = 50)
+#' plot(fts)
+#' 
+#' # Generate observations with very strong dependance
+#' fts = fts.rar(n = 100, d = 5, burnin = 50, op.norms = 0.999)
+#' plot(fts)
 fts.rar = function(n = 100, d = 11, Psi = NULL, op.norms = NULL, burnin = 20, noise = "mnorm", sigma = diag(d:1)/d, df = 4)
 {
   
   if(!is.null(Psi) && d!=dim(Psi)[1])
-	stop("d must be equal to the dimension of Psi")
+  	stop("d must be equal to the dimension of Psi")
 
   if(!is.null(Psi) && dim(Psi)[1]!=dim(Psi)[2])
-	stop("coefficients need to be square matrices")
+	  stop("coefficients need to be square matrices")
 
   if(!is.null(Psi))
-	d=dim(Psi)[1]
-
+	  d=dim(Psi)[1]
+  
   if(d %% 2==0)
-	stop("d must be odd")
+  	stop("d must be odd")
   
   if (is.null(Psi)){
 		Psi = exp(-(1:d))%*%t(exp(-(1:d)))
@@ -64,12 +78,12 @@ fts.rar = function(n = 100, d = 11, Psi = NULL, op.norms = NULL, burnin = 20, no
   p=dim(Psi)[3]
 
   if(is.null(op.norms)){
-  op.norms=c()
-  for(i in 1:p){op.norms=c(op.norms,norm(Psi[,,i],type="f"))}
+    op.norms=c()
+    for(i in 1:p){op.norms=c(op.norms,norm(Psi[,,i],type="f"))}
   }
 
   for(i in 1:p){
- 	Psi[,,i]=Psi[,,i]/norm(Psi[,,i],type="f")*op.norms[i]
+ 	  Psi[,,i]=Psi[,,i]/norm(Psi[,,i],type="f")*op.norms[i]
   }	
   
   arg <- list()

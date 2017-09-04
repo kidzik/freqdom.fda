@@ -30,6 +30,22 @@
 #' @seealso The multivariate equivalent in the \code{freqdom} package: \code{\link[freqdom]{cov.structure}}
 #' @export
 #' @keywords time-domain
+#' @examples 
+#' # Generate an autoregressive process
+#' fts = fts.rar(d=3)
+#' 
+#' # Get covariance at lag 0
+#' fts.cov.structure(fts, lags = 0)
+#' 
+#' # Get covariance at lag 10
+#' fts.cov.structure(fts, lags = 10)
+#'
+#' # Get entire covariance structure between -20 and 20
+#' fts.cov.structure(fts, lags = -20:20)
+#' 
+#' # Compute covariance with another process
+#' fts0 = fts + fts.rma(d=3)
+#' fts.cov.structure(fts, fts0, lags = -2:2)
 fts.cov.structure = function(X, Y=X, lags=0){
   fdom = cov.structure(X=t(X$coefs),Y=t(Y$coefs),lags=lags)
   fts.timedom(fdom, basisX=X$basis, basisY=Y$basis)

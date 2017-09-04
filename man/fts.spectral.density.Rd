@@ -53,6 +53,23 @@ Since \eqn{X_t(u)=\boldsymbol{b}_1^\prime(u)\mathbf{x}_t} and \eqn{Y_t(u)=\mathb
 where \eqn{\widehat{\mathcal{F}}^{\mathbf{xy}}(\omega)} is defined as for the function \code{\link[freqdom]{spectral.density}} for series of coefficient vectors
 \eqn{(\mathbf{x}_t\colon 1\leq t\leq T)} and \eqn{(\mathbf{y}_t\colon 1\leq t\leq T)}.
 }
+\examples{
+data(pm10)
+X = center.fd(pm10)
+
+# Compute the spectral density operator with Bartlett weights
+SD = fts.spectral.density(X, freq = (-50:50/50) * pi, q = 2, weight="Bartlett")
+fts.plot.operators(SD, freq = -2:2)
+
+# Compute the spectral density operator with Tukey weights
+SD = fts.spectral.density(X, freq = (-50:50/50) * pi, q = 2, weight="Tukey")
+fts.plot.operators(SD, freq = -2:2)
+# Note relatively small difference between the two plots
+
+# Now, compute the spectral density operator with Tukey weights and larger q
+SD = fts.spectral.density(X, freq = (-50:50/50) * pi, q = 5, weight="Tukey")
+fts.plot.operators(SD, freq = -2:2)
+}
 \seealso{
 The multivariate equivalent in the \code{freqdom} package: \code{\link[freqdom]{spectral.density}}
 }
