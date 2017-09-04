@@ -2,10 +2,12 @@ Package: freqdom.fda
 Type: Package
 Title: Functional time series: dynamic FPCA
 Version: 0.9.1
-Date: 2017-06-01
+Date: 2017-09-01
 Author: Hormann S., Kidzinski L.
 Maintainer: Kidzinski L. <lukasz.kidzinski@stanford.edu>
-Description: Implementations of functional dynamic principle components analysis (FDPCA). Some related graphic tools and frequency domain methods.  
+Description: Implementations of functional dynamic principle components analysis (FDPCA). Related graphic tools and frequency domain methods.
+  These methods directly use freqdom package, following the guidlines from Hormann, Kidzinski and Hallin (2016), Dynamic Functional Principal
+  Component <doi:10.1111/rssb.12076>.
 License: GPL-3
 Depends: R (>= 2.15.0), mvtnorm, stats, graphics, base, fda, freqdom
 Suggests: MASS, MARSS

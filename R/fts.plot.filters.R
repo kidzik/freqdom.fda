@@ -73,9 +73,9 @@ fts.plot.filters = function(A, Ndpc = 1, lags = -3:3, one.plot=FALSE,...)
       title(paste("Filter",dpc))
   }
   if (one.plot){
-    legend(A$lags[1],cmax,paste("filter",1:Ndpc), # places a legend at the appropriate place c(“Health”,”Defense”), # puts text in the legend
-           lty=c(1,1), # gives the legend appropriate symbols (lines)
-           lwd=c(2.5,2.5), col = cols) # gives the legend lines the correct color and width
+    legend(A$lags[1],cmax,paste("filter",1:Ndpc), 
+           lty=c(1,1),
+           lwd=c(2.5,2.5), col = cols) 
     title(paste("Components"))
   }
 }
