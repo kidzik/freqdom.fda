@@ -1,5 +1,5 @@
 inClass = function(X,cls){
-  !is.null(oldClass(X)) && oldClass(X) == cls
+  (length(oldClass(X)) > 0) && any(oldClass(X) == cls)
 }
 
 #' Checks if an object belongs to the class \code{\link{fts.timedom}}.

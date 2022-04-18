@@ -4,8 +4,7 @@
 \alias{fts.plot.covariance}
 \title{Contour plot for the kernels of cross-covariance operators.}
 \usage{
-fts.plot.covariance(X, Y = X, cor = FALSE, res = 200, lags = 0:3,
-  nlevels = 25)
+fts.plot.covariance(X, Y = X, cor = FALSE, res = 200, lags = 0:3, nlevels = 25)
 }
 \arguments{
 \item{X}{an object of class \code{\link[fda]{fd}} representing a functional data sample.}

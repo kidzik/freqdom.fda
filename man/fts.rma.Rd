@@ -4,8 +4,15 @@
 \alias{fts.rma}
 \title{Simulate functional moving average processes}
 \usage{
-fts.rma(n = 100, d = 11, Psi = NULL, op.norms = NULL, noise = "mnorm",
-  sigma = diag(d:1)/d, df = 4)
+fts.rma(
+  n = 100,
+  d = 11,
+  Psi = NULL,
+  op.norms = NULL,
+  noise = "mnorm",
+  sigma = diag(d:1)/d,
+  df = 4
+)
 }
 \arguments{
 \item{n}{number of observations to generate.}

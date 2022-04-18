@@ -4,8 +4,10 @@
 \name{pm10}
 \alias{pm10}
 \title{PM10 dataset}
-\format{\eqn{175} daily distribution functions in the \code{fd} format
-from the \pkg{fda} package}
+\format{
+\eqn{175} daily distribution functions in the \code{fd} format
+from the \pkg{fda} package
+}
 \source{
 Styrian Government, FA 17C Technical Environmental Protection and Safety, Air Quality Control Section,
 }

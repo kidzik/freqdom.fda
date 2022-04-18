@@ -1,8 +1,8 @@
 Package: freqdom.fda
 Type: Package
 Title: Functional Time Series: Dynamic Functional Principal Components
-Version: 0.9.1
-Date: 2017-09-01
+Version: 1.0.1
+Date: 2022-04-18
 Author: Hormann S., Kidzinski L.
 Maintainer: Kidzinski L. <lukasz.kidzinski@stanford.edu>
 Description: Implementations of functional dynamic principle components analysis. Related graphic tools and frequency domain methods.
@@ -12,4 +12,5 @@ License: GPL-3
 Depends: R (>= 2.15.0), mvtnorm, stats, graphics, base, fda, freqdom
 Suggests: MASS, MARSS
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 6.0.1
+RoxygenNote: 7.1.2
+LazyData: true

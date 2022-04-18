@@ -55,11 +55,11 @@ res.pca$x[,-1] = 0
 var.dpca = (1 - sum( (res.dpca$Xhat$coefs - X$coefs)**2 ) / sum(X$coefs**2))*100
 var.pca = (1 - sum( (res.pca$x \%*\% t(res.pca$rotation) - t(X$coefs) )**2 ) / sum(X$coefs**2))*100
 
-cat("Variance explained by PCA (empirical):\\t\\t",var.pca,"\%\\n")
-cat("Variance explained by PCA (theoretical):\\t",
-   (1 - (res.pca$sdev[1] / sum(res.pca$sdev)))*100,"\%\\n")
-cat("Variance explained by DPCA (empirical):\\t\\t",var.dpca,"\%\\n")
-cat("Variance explained by DPCA (theoretical):\\t",(res.dpca$var[1])*100,"\%\\n")
+cat("Variance explained by PCA (empirical):\t\t",var.pca,"\%\n")
+cat("Variance explained by PCA (theoretical):\t",
+   (1 - (res.pca$sdev[1] / sum(res.pca$sdev)))*100,"\%\n")
+cat("Variance explained by DPCA (empirical):\t\t",var.dpca,"\%\n")
+cat("Variance explained by DPCA (theoretical):\t",(res.dpca$var[1])*100,"\%\n")
 
 # Plot filters
 fts.plot.filters(res.dpca$filters)

@@ -4,8 +4,7 @@
 \alias{fts.plot.operators}
 \title{Contour plot of operator kernels.}
 \usage{
-fts.plot.operators(A, res = 200, lags = 0, freq = 0, axis = "Re",
-  nlevels = 25)
+fts.plot.operators(A, res = 200, lags = 0, freq = 0, axis = "Re", nlevels = 25)
 }
 \arguments{
 \item{A}{an object of class \code{fts.timedom} or \code{\link{fts.freqdom}}.}

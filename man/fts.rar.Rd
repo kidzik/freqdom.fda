@@ -4,8 +4,16 @@
 \alias{fts.rar}
 \title{Simulate functional autoregressive processes}
 \usage{
-fts.rar(n = 100, d = 11, Psi = NULL, op.norms = NULL, burnin = 20,
-  noise = "mnorm", sigma = diag(d:1)/d, df = 4)
+fts.rar(
+  n = 100,
+  d = 11,
+  Psi = NULL,
+  op.norms = NULL,
+  burnin = 20,
+  noise = "mnorm",
+  sigma = diag(d:1)/d,
+  df = 4
+)
 }
 \arguments{
 \item{n}{number of observations to generate.}
